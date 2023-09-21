@@ -49,3 +49,23 @@ def is_number(s):
         return True
     except ValueError:
         return False
+
+
+def check_explain_match_type_1(col1, col2, col3, condition):
+    explain_jp = re.findall(condition, col1)
+    if not col2 and not explain_jp:
+        return True
+    if not explain_jp or not col2:
+        return False
+    answers = [element.strip()
+               for element in col2.split("\n") if element.strip() != ""]
+    return answers[int(col3)-1] == explain_jp[0]
+
+
+def check_explain_match_type_2(col1, col2, condition):
+    explain_jp = re.findall(condition, col1)
+    if not col2 and not explain_jp:
+        return True
+    if not explain_jp or not col2:
+        return False
+    return explain_jp[0].strip() == col2.strip()
