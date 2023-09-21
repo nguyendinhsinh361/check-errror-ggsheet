@@ -1,40 +1,40 @@
-from src.helpers import unicode
+from src.helpers import common
 import re
 # Column text_question
 
 
 def check_E2_structure_where(text):
     check = text.split("\"")
-    return unicode.is_vietnamese(check[1]) and check[0].strip() == "Đâu là" and check[2].strip() == "?"
+    return common.is_vietnamese(check[1]) and check[0].strip() == "Đâu là" and check[2].strip() == "?"
 
 
 def check_E3_written_by_japanese(text):
-    return all(unicode.is_japanese(element) or not unicode.is_latin(element) for element in text)
+    return all(common.is_japanese(element) or not common.is_latin(element) for element in text)
 
 
 def check_E11_appear_only_have_one_han_char(text):
-    return unicode.count_han_words(text) == 1
+    return common.count_han_words(text) == 1
 
 
 def check_E12_appear_more_two_han_char(text):
-    return unicode.count_han_words(text) >= 2
+    return common.count_han_words(text) >= 2
 
 
 def check_E13_written_by_vietnamese(text):
-    return not unicode.check_written_by_japanese(text)
+    return not check_E3_written_by_japanese(text)
 
 
 def check_E17_structure_translate(text):
     check = text.split("\"")
-    return unicode.is_vietnamese(check[1]) and check[0].strip() == "Dịch" and check[2].strip() == ""
+    return common.is_vietnamese(check[1]) and check[0].strip() == "Dịch" and check[2].strip() == ""
 
 
 def check_E18_contain_a_pair_of_parentheses(text):
-    return unicode.count_pair_of_parentheses(text) == 1
+    return common.count_pair_of_parentheses(text) == 1
 
 
 def check_E19_contain_more_pair_of_parentheses(text):
-    return unicode.count_pair_of_parentheses(text) >= 1
+    return common.count_pair_of_parentheses(text) >= 1
 
 
 # Column kana_question
@@ -44,12 +44,12 @@ def check_F3_match_column(col1, col2):
         "\n") if element.strip() != ""]
     words_col2 = [element.strip() for element in col2.split(
         "\n") if element.strip() != ""]
-    return len(col1) == len(col2)
+    return len(words_col1) == len(words_col2)
 # Column hanviet_question
 
 
 def check_I11_written_by_capital_vietnamese(text):
-    return unicode.is_vietnamese(text) and text == text.upper()
+    return common.is_vietnamese(text) and text == text.upper()
 
 # Column audio
 
@@ -59,7 +59,7 @@ def check_J3_have_tag_p_or_h(text):
 
 
 def check_J3_like_column(col1_audio, col2_text_question):
-    clean_text = unicode.get_clean_text(col1_audio)
+    clean_text = common.get_clean_text(col1_audio)
     return clean_text == col2_text_question
 
 # Column image
@@ -136,7 +136,7 @@ def check_L17_has_punctuation(text):
     words = [element.strip()
              for element in text.split("\n") if element.strip() != ""]
     words_str = "".join(words)
-    return all(unicode.is_japanese(element) for element in words_str)
+    return all(common.is_japanese(element) for element in words_str)
 
 
 def check_L19_structure_pair_of_parentheses(text):
@@ -154,7 +154,7 @@ def check_L21_muitii_line_breaks(text):
 # Column corect_answer
 
 def check_S2_type_number(text):
-    return unicode.is_number(text)
+    return common.is_number(text)
 
 
 def check_S4_pairing_method(text):
@@ -165,7 +165,7 @@ def check_S4_pairing_method(text):
 def check_S13_type_number_and_like_number_audio(text):
     # Pending
     another_con = True
-    return unicode.is_number(text) and another_con
+    return common.is_number(text) and another_con
 
 
 def check_S14_correct_answer_like_audio(col1_corect_answer, col2_audio):
@@ -188,18 +188,18 @@ def check_S19_correct_answer_has_pair_of_parentheses_and_like_answer(col1_corect
 
 def check_T2_explain_match_answer_and_correct_answer_type_1(col1_explain, col2_answer, col3_correct_answer):
     condition = r'\{\{(.*?)\}\}'
-    return unicode.check_explain_match_type_1(col1_explain, col2_answer, col3_correct_answer, condition)
+    return common.check_explain_match_type_1(col1_explain, col2_answer, col3_correct_answer, condition)
 
 
 def check_T2_explain_match_answer_and_kana_answer_type_1(col1_explain, col2_kana_answer, col3_correct_answer):
     condition = r'\[\[(.*?)\]\]'
-    return unicode.check_explain_match_type_1(
+    return common.check_explain_match_type_1(
         col1_explain, col2_kana_answer, col3_correct_answer, condition)
 
 
-def check_T2_explain_match_answer_and_kana_answer_type_1(col1_explain, col2_romanji_answer, col3_correct_answer):
+def check_T2_explain_match_answer_and_romanji_answer_type_1(col1_explain, col2_romanji_answer, col3_correct_answer):
     condition = r'\(\((.*?)\)\)'
-    return unicode.check_explain_match_type_1(
+    return common.check_explain_match_type_1(
         col1_explain, col2_romanji_answer, col3_correct_answer, condition)
 
 
@@ -216,23 +216,23 @@ def check_T2_explain_mean_like_text_question_type_1(col1_explain, col2_text_ques
 def check_T3_explain_mean_like_text_question_type_2(col1_explain, col2_text_question):
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_text_question))
     condition = r'\{\{(.*?)\}\}'
-    return not check_tag_p and unicode.check_explain_match_type_2(
+    return not check_tag_p and common.check_explain_match_type_2(
         col1_explain, col2_text_question, condition)
 
 
 def check_T3_explain_mean_like_kana_question_type_2(col1_explain, col2_kana_question):
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_kana_question))
     condition = r'\[\[(.*?)\]\]'
-    return not check_tag_p and unicode.check_explain_match_type_2(
+    return not check_tag_p and common.check_explain_match_type_2(
         col1_explain, col2_kana_question, condition)
 
 
-def check_T3_explain_mean_like_romaji_question_type_2(col1_explain, col2_romaji_question):
+def check_T3_explain_mean_like_romanji_question_type_2(col1_explain, col2_romanji_question):
     check_tag_p = bool(
-        re.search(r'<[pP][^>]*>.*?</[pP]>', col2_romaji_question))
+        re.search(r'<[pP][^>]*>.*?</[pP]>', col2_romanji_question))
     condition = r'\(\((.*?)\)\)'
-    return not check_tag_p and unicode.check_explain_match_type_2(
-        col1_explain, col2_romaji_question, condition)
+    return not check_tag_p and common.check_explain_match_type_2(
+        col1_explain, col2_romanji_question, condition)
 
 
 def check_T3_explain_mean_match_correct_answer_type_2(col1_explain, col2_answer, col3_correct_answer):

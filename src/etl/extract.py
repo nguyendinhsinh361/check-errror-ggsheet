@@ -1,9 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import json
-import requests
 from bs4 import BeautifulSoup
-import re
 
 # Load credentials from the JSON key file you downloaded
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets",
@@ -13,9 +11,9 @@ CREDS = Credentials.from_service_account_file(
 
 GGSHEET_TITLE = '[HeyJapan] Dữ liệu bài học Đức'
 
-GGSHEET_FRANCE = 'HeyFrance'
+GGSHEET_BASIC_1 = '1_Cơ bản 1'
 
-DATA_FRANCE = 'static/france.json'
+DATA_BASIC_1 = 'src/data/basic_1.json'
 
 
 def extract_data():
@@ -26,11 +24,11 @@ def extract_data():
     sheet = client.open(GGSHEET_TITLE)
 
     # Select a specific worksheet within the Google Sheet
-    worksheet_w1 = sheet.worksheet(GGSHEET_FRANCE)
+    worksheet_w1 = sheet.worksheet(GGSHEET_BASIC_1)
 
     all_records_w1 = worksheet_w1.get_all_records()
 
-    save_data_to_json(all_records_w1, DATA_FRANCE)
+    save_data_to_json(all_records_w1, DATA_BASIC_1)
 
 
 def save_data_to_json(data, path, type=''):

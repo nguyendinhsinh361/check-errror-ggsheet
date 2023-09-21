@@ -1,1362 +1,274 @@
 {
   "1": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
     "column": "text_question",
     "content": "Cấu trúc điền: Đâu là \"Nghĩa tiếng Việt\"?"
   },
   "2": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
     "column": "text_question",
     "content": "Viết bằng tiếng Nhật"
   },
   "3": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "4": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "5": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "6": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "7": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "8": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
     "column": "text_question",
     "content": "Chỉ xuất hiện 1 chữ hán"
   },
-  "9": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "10": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
+  "4": {
     "column": "text_question",
     "content": "Xuất hiện từ 2 chữ hán trở lên"
   },
-  "11": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
+  "5": {
     "column": "text_question",
     "content": "Viết bằng tiếng Việt"
   },
-  "12": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "13": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
+  "6": {
     "column": "text_question",
     "content": "Cấu trúc điền: Dịch \"Nghĩa tiếng Việt\""
   },
-  "14": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "15": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+  "7": {
     "column": "text_question",
     "content": "Có chứa 1 ()"
   },
-  "16": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "17": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+  "8": {
     "column": "text_question",
     "content": "Có chứa các ()"
   },
-  "18": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "19": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "text_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "20": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "9": {
     "column": "kana_question",
     "content": "Khớp với cột text_question"
   },
-  "21": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "22": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "23": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "24": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "25": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "26": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "27": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "28": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "29": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "kana_question",
-    "content": "Khớp với cột text_question"
-  },
-  "30": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "10": {
     "column": "romaji_question",
     "content": "Khớp với cột kana_question"
   },
-  "31": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "32": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "33": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "34": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "35": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "36": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "37": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "38": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "39": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "40": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "romaji_question",
-    "content": "Khớp với cột kana_question"
-  },
-  "41": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "mean_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "42": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "mean_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "43": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "mean_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "44": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "mean_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "45": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "mean_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "46": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "mean_question",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "47": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "hanviet_question",
-    "content": "Viết bằng tiếng Việt in hoa"
-  },
-  "48": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "hanviet_question",
-    "content": "Viết bằng tiếng Việt in hoa"
-  },
-  "49": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "50": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "11": {
     "column": "audio",
     "content": "Không có <p></p> hay <h></h>"
   },
-  "51": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "12": {
     "column": "audio",
     "content": "Giống với text question (bỏ <p></p> nếu có)"
   },
-  "52": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "53": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "54": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "audio",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "55": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "56": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "57": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "audio",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "58": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "59": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "60": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "audio",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "61": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "62": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "63": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "audio",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "64": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "65": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "66": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "audio",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "67": {
-    "kind": "Nghe và chọn từ - phiên âm",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "68": {
-    "kind": "Nghe và chọn từ - phiên âm",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "69": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "70": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "71": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "72": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "73": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
-    "column": "audio",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "74": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "75": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "76": {
-    "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
-    "column": "audio",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "77": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "78": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "79": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "80": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "81": {
-    "kind": "Nghe và chọn nghĩa",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "82": {
-    "kind": "Nghe và chọn nghĩa",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "83": {
-    "kind": "Chọn hình phù hợp với đoạn ghi âm",
-    "column": "audio",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "84": {
-    "kind": "Chọn hình phù hợp với đoạn ghi âm",
-    "column": "audio",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "85": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "image",
-    "content": "Không có <p></p> hay <h></h>"
-  },
-  "86": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+  "13": {
     "column": "answer",
     "content": "2 hoặc 4 đáp án khác nhau"
   },
-  "87": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "88": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
-    "column": "answer",
-    "content": " Max 4 đáp án khác nhau"
-  },
-  "89": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
-    "column": "answer",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "90": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "answer",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "91": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "answer",
-    "content": "Chứa đủ các từ/cụm từ ở cột correct_answer"
-  },
-  "92": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "answer",
-    "content": "Cho phép có thêm các từ/cụm từ gây nhiễu"
-  },
-  "93": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "answer",
-    "content": "Không có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)"
-  },
-  "94": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "answer",
-    "content": "Trật tự các dòng không được giống hệt correct_answer"
-  },
-  "95": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "96": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
+  "14": {
     "column": "answer",
     "content": "Max 4 đáp án khác nhau"
   },
-  "97": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "98": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
+  "15": {
     "column": "answer",
     "content": "Chứa đủ các từ/cụm từ ở cột correct_answer"
   },
-  "99": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
+  "16": {
     "column": "answer",
     "content": "Cho phép có thêm các từ/cụm từ gây nhiễu"
   },
-  "100": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "answer",
-    "content": "Không có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)"
-  },
-  "101": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
+  "17": {
     "column": "answer",
     "content": "Trật tự các dòng không được giống hệt correct_answer"
   },
-  "102": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "103": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "answer",
-    "content": "Max 4 đáp án khác nhau"
-  },
-  "104": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "105": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "answer",
-    "content": "Chứa đủ các từ/cụm từ ở cột correct_answer"
-  },
-  "106": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "answer",
-    "content": "Cho phép có thêm các từ/cụm từ gây nhiễu"
-  },
-  "107": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "answer",
-    "content": "Không có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)"
-  },
-  "108": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "answer",
-    "content": "Trật tự các dòng không được giống hệt correct_answer"
-  },
-  "109": {
-    "kind": "Nghe và chọn từ - phiên âm",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "110": {
-    "kind": "Nghe và chọn từ - phiên âm",
-    "column": "answer",
-    "content": "Max 4 đáp án khác nhau"
-  },
-  "111": {
-    "kind": "Nghe và chọn từ - phiên âm",
+  "18": {
     "column": "answer",
     "content": "Trong số các đáp án, phải có đáp án giống hệt audio (chấp nhận trường hợp answer có dấu chấm hết câu mà audio k có)"
   },
-  "112": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "113": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "answer",
-    "content": "Chứa đủ các từ/cụm từ ở cột correct_answer"
-  },
-  "114": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "answer",
-    "content": "Cho phép có thêm các từ/cụm từ gây nhiễu"
-  },
-  "115": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "answer",
-    "content": "Không có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)"
-  },
-  "116": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "answer",
-    "content": "Trật tự các dòng không được giống hệt correct_answer"
-  },
-  "117": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "118": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "answer",
-    "content": "Max 4 đáp án khác nhau"
-  },
-  "119": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
+  "19": {
     "column": "answer",
     "content": "1 đáp án giống audio"
   },
-  "120": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "121": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Chứa đủ các từ/cụm từ ở cột correct_answer"
-  },
-  "122": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Cho phép có thêm các từ/cụm từ gây nhiễu"
-  },
-  "123": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
+  "20": {
     "column": "answer",
     "content": "Không có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)"
   },
-  "124": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Trật tự các dòng không được giống hệt correct_answer"
-  },
-  "125": {
-    "kind": "Nghe và chọn nghĩa",
-    "column": "answer",
-    "content": "Max 4 đáp án khác nhau"
-  },
-  "126": {
-    "kind": "Nghe và chọn nghĩa",
-    "column": "answer",
-    "content": "Viết bằng tiếng Việt"
-  },
-  "127": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "128": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "answer",
-    "content": "Chứa đủ các từ/cụm từ ở cột correct_answer"
-  },
-  "129": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "answer",
-    "content": "Cho phép có thêm các từ/cụm từ gây nhiễu"
-  },
-  "130": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "answer",
-    "content": "Không có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)"
-  },
-  "131": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "answer",
-    "content": "Trật tự các dòng không được giống hệt correct_answer"
-  },
-  "132": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "133": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+  "21": {
     "column": "answer",
     "content": "Max 4 đáp án, các đáp án phải khác nhau"
   },
-  "134": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+  "22": {
     "column": "answer",
     "content": "Cấu trúc điền: (text)"
   },
-  "135": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "136": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "answer",
-    "content": "Max 4 đáp án, các đáp án phải khác nhau"
-  },
-  "137": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "138": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+  "23": {
     "column": "answer",
     "content": "Ngắt thành nhiều dòng"
   },
-  "139": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+  "24": {
     "column": "answer",
     "content": "Không viết hoa chữ cái đầu của dòng đầu tiên"
   },
-  "140": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+  "25": {
     "column": "answer",
     "content": "Không có dấu \".\" hết câu"
   },
-  "141": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
-  },
-  "142": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Chứa đủ các từ/cụm từ ở cột correct_answer"
-  },
-  "143": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Cho phép có thêm các từ/cụm từ gây nhiễu"
-  },
-  "144": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Không có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)"
-  },
-  "145": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "answer",
-    "content": "Trật tự các dòng không được giống hệt correct_answer"
-  },
-  "146": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+  "26": {
     "column": "kana_answer",
     "content": "Khớp với cột answer"
   },
-  "147": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "148": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "149": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "150": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "151": {
-    "kind": "Nghe và chọn từ - phiên âm",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "152": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "153": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "154": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "155": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
+  "27": {
     "column": "kana_answer",
     "content": "Không cần điền"
   },
-  "156": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "157": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "158": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "159": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "160": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột answer"
-  },
-  "161": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
-    "column": "kana_answer",
+  "28": {
+    "column": "romanji_answer",
     "content": "Khớp với cột kana_answer"
   },
-  "162": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "163": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "164": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "165": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "166": {
-    "kind": "Nghe và chọn từ - phiên âm",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "167": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "168": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "169": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "170": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "171": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "172": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "173": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "174": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "175": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "kana_answer",
-    "content": "Khớp với cột kana_answer"
-  },
-  "176": {
-    "kind": "Chọn hình phù hợp với đoạn ghi âm",
+  "29": {
     "column": "Image_answer",
     "content": "2 hoặc 4 ảnh"
   },
-  "177": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+  "30": {
+    "column": "corect_answer",
+    "content": "Đáp án dạng số"
+  },
+  "31": {
+    "column": "corect_answer",
+    "content": "Có thể có nhiều cách ghép, các cách ghép ngăn cách nhau bằng ###"
+  },
+  "32": {
+    "column": "corect_answer",
+    "content": " Đáp án dạng số (trùng với stt của đáp án giống audio)"
+  },
+  "33": {
+    "column": "corect_answer",
+    "content": "Khi ghép lại thành 1 dòng thì trùng với audio"
+  },
+  "34": {
     "column": "explain",
     "content": "Khớp với đáp án ở cột answer mà tương ứng theo correct answer"
   },
-  "178": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+  "35": {
     "column": "explain",
     "content": "Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer"
   },
-  "179": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+  "36": {
     "column": "explain",
     "content": "Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer"
   },
-  "180": {
-    "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+  "37": {
     "column": "explain",
     "content": "Nghĩa phải giống với text_question"
   },
-  "181": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
-    "column": "explain",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "182": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "38": {
     "column": "explain",
     "content": "Giống với kana_question (bỏ <p></p> nếu có)"
   },
-  "183": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "39": {
     "column": "explain",
     "content": "Giống với romaji_question (bỏ <p></p> nếu có)"
   },
-  "184": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "40": {
     "column": "explain",
     "content": "Khớp với đáp án tương ứng theo correct answer"
   },
-  "185": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "explain",
-    "content": "Giống với text question (bỏ <p></p> nếu có)"
-  },
-  "186": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "explain",
-    "content": "Giống với kana_question (bỏ <p></p> nếu có)"
-  },
-  "187": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "explain",
-    "content": "Giống với romaji_question (bỏ <p></p> nếu có)"
-  },
-  "188": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
+  "41": {
     "column": "explain",
     "content": "Tương ứng theo correct answer (ghép thành 1 dòng)"
   },
-  "189": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
+  "42": {
     "column": "explain",
     "content": "Số lượng explain bằng số lượng cách ghép"
   },
-  "190": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột answer mà tương ứng theo correct answer"
-  },
-  "191": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer"
-  },
-  "192": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer"
-  },
-  "193": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "explain",
-    "content": "Nghĩa viết bằng tiếng Việt"
-  },
-  "194": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
+  "43": {
     "column": "explain",
     "content": "Khớp với correct_answer khi ghép lại thành 1 dòng"
   },
-  "195": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
+  "44": {
     "column": "explain",
     "content": "Hình thức kana khớp với correct_answer khi ghép lại thành 1 dòng"
   },
-  "196": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
+  "45": {
     "column": "explain",
     "content": "Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng"
   },
-  "197": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "explain",
-    "content": "Nghĩa viết bằng tiếng Việt"
-  },
-  "198": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "explain",
-    "content": "Số lượng explain bằng số lượng cách ghép"
-  },
-  "199": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột answer mà tương ứng theo correct answer"
-  },
-  "200": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer"
-  },
-  "201": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer"
-  },
-  "202": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "explain",
-    "content": "Nghĩa viết bằng tiếng Việt"
-  },
-  "203": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "explain",
-    "content": "Khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "204": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "explain",
-    "content": "Hình thức kana khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "205": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "explain",
-    "content": "Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "206": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "explain",
-    "content": "Nghĩa viết bằng tiếng Việt"
-  },
-  "207": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "explain",
-    "content": "Số lượng explain bằng số lượng cách ghép"
-  },
-  "208": {
-    "kind": "Nghe và chọn từ - phiên âm",
+  "46": {
     "column": "explain",
     "content": "Giống với audio"
   },
-  "209": {
-    "kind": "Nghe và chọn từ - phiên âm",
+  "47": {
     "column": "explain",
     "content": "Khớp với kana_answer tương ứng theo correct_answer"
   },
-  "210": {
-    "kind": "Nghe và chọn từ - phiên âm",
+  "48": {
     "column": "explain",
     "content": "Khớp với romaji_answer tương ứng theo correct_answer"
   },
-  "211": {
-    "kind": "Nghe và chọn từ - phiên âm",
-    "column": "explain",
-    "content": "Nghĩa viết bằng tiếng Việt"
-  },
-  "212": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "explain",
-    "content": "Giống với audio"
-  },
-  "213": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "explain",
-    "content": "Hình thức kana khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "214": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "explain",
-    "content": "Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "215": {
-    "kind": "Nghe và ghép từ thành câu",
-    "column": "explain",
-    "content": "Nghĩa viết bằng tiếng Việt"
-  },
-  "216": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
+  "49": {
     "column": "explain",
     "content": "Khớp với audio"
   },
-  "217": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "explain",
-    "content": "Khớp với kana_answer tương ứng theo correct_answer"
-  },
-  "218": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
-    "column": "explain",
-    "content": "Khớp với romaji_answer tương ứng theo correct_answer"
-  },
-  "219": {
-    "kind": "Nghe - đọc nghĩa và chọn câu",
+  "50": {
     "column": "explain",
     "content": "Khớp với text_question"
   },
-  "220": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Khớp với audio"
-  },
-  "221": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Hình thức kana khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "222": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "223": {
-    "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Khớp với text_question"
-  },
-  "224": {
-    "kind": "Nghe và chọn nghĩa",
-    "column": "explain",
-    "content": "Khớp với audio"
-  },
-  "225": {
-    "kind": "Nghe và chọn nghĩa",
+  "51": {
     "column": "explain",
     "content": "Hình thức kana của audio"
   },
-  "226": {
-    "kind": "Nghe và chọn nghĩa",
+  "52": {
     "column": "explain",
     "content": "Hình thức romaji của audio"
   },
-  "227": {
-    "kind": "Nghe và chọn nghĩa",
+  "53": {
     "column": "explain",
     "content": "Khớp với đáp án tương ứng với correct_answer"
   },
-  "228": {
-    "kind": "Chọn hình phù hợp với đoạn ghi âm",
-    "column": "explain",
-    "content": "Khớp với audio"
-  },
-  "229": {
-    "kind": "Chọn hình phù hợp với đoạn ghi âm",
-    "column": "explain",
-    "content": "Hình thức kana của audio"
-  },
-  "230": {
-    "kind": "Chọn hình phù hợp với đoạn ghi âm",
-    "column": "explain",
-    "content": "Hình thức romaji của audio"
-  },
-  "231": {
-    "kind": "Chọn hình phù hợp với đoạn ghi âm",
+  "54": {
     "column": "explain",
     "content": "Nghĩa tiếng Việt"
   },
-  "232": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
+  "55": {
     "column": "explain",
     "content": "Viết bằng tiếng Nhật, tương ứng với biểu hiện kanji của correct answer (ghép thành 1 dòng)"
   },
-  "233": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "explain",
-    "content": "Tương ứng theo correct answer (ghép thành 1 dòng)"
-  },
-  "234": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
-    "column": "explain",
-    "content": "Tương ứng theo correct answer (ghép thành 1 dòng)"
-  },
-  "235": {
-    "kind": "Đọc nghĩa - Xem ảnh và ghép chữ cái - phiên âm",
+  "56": {
     "column": "explain",
     "content": "Nghĩa tiếng Việt khớp với ô text_question"
   },
-  "236": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+  "57": {
     "column": "explain",
     "content": "Câu hoàn chỉnh khi ghép đáp án tương ứng với correct_answer vào vị trí của () ở text_question, bỏ thẻ p nếu có"
   },
-  "237": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+  "58": {
     "column": "explain",
     "content": "Câu hoàn chỉnh khi ghép đáp án ở cột kana_answer tương ứng với correct_answer vào vị trí của () ở kana_question, bỏ thẻ p nếu có"
   },
-  "238": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+  "59": {
     "column": "explain",
     "content": "Câu hoàn chỉnh khi ghép đáp án  ở cột romanji_answer tương ứng với correct_answer vào vị trí của () ở romaji_question, bỏ thẻ p nếu có"
   },
-  "239": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "explain",
-    "content": "Nghĩa tiếng Việt"
-  },
-  "240": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+  "60": {
     "column": "explain",
     "content": "Câu hoàn chỉnh khi ghép \"text\" ở cột answer vào câu ở text_question theo như correct_answer"
   },
-  "241": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+  "61": {
     "column": "explain",
     "content": "Câu hoàn chỉnh khi ghép \"text\" ở cột kana_answer vào câu ở kana_question theo như correct_answer"
   },
-  "242": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+  "62": {
     "column": "explain",
     "content": "Câu hoàn chỉnh khi ghép \"text\" ở cột romanji_answer vào câu ở romaji_question theo như correct_answer"
   },
-  "243": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "explain",
-    "content": "Nghĩa tiếng Việt"
-  },
-  "244": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột answer mà tương ứng theo correct answer"
-  },
-  "245": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer"
-  },
-  "246": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "explain",
-    "content": "Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer"
-  },
-  "247": {
-    "kind": "Đọc nghĩa và chọn từ - phiên âm",
-    "column": "explain",
-    "content": "Khớp với text_question"
-  },
-  "248": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+  "63": {
     "column": "explain",
     "content": "Khớp khi nội dung cột answer được viết thành 1 dòng và bỏ đi text ở dòng tương ứng với correct_answer"
   },
-  "249": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+  "64": {
     "column": "explain",
     "content": "Khớp khi nội dung cột kana_answer được viết thành 1 dòng và bỏ đi text ở dòng tương ứng với correct_answer"
   },
-  "250": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+  "65": {
     "column": "explain",
     "content": "Khớp khi nội dung cột romanji_answer được viết thành 1 dòng và bỏ đi text ở dòng tương ứng với correct_answer"
   },
-  "251": {
-    "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
-    "column": "explain",
-    "content": "Nghĩa tiếng Việt"
-  },
-  "252": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "253": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Hình thức kana khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "254": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng"
-  },
-  "255": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Khớp với text_question"
-  },
-  "256": {
-    "kind": "Đọc nghĩa và ghép từ thành câu",
-    "column": "explain",
-    "content": "Số lượng explain bằng số lượng cách ghép"
-  },
-  "257": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "66": {
     "column": "explain_grammar",
     "content": " Nếu text_question có <p></p> thì phải điền explain_grammar."
   },
-  "258": {
-    "kind": "Nghe - đọc câu và chọn nghĩa",
+  "67": {
     "column": "explain_grammar",
     "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
   },
-  "259": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
+  "68": {
     "column": "explain_grammar",
     "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
-  },
-  "260": {
-    "kind": "Nghe - đọc câu và ghép nghĩa",
-    "column": "explain_grammar",
-    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
-  },
-  "261": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "explain_grammar",
-    "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
-  },
-  "262": {
-    "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
-    "column": "explain_grammar",
-    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
-  },
-  "263": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "explain_grammar",
-    "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
-  },
-  "264": {
-    "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
-    "column": "explain_grammar",
-    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
-  },
-  "265": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "explain_grammar",
-    "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
-  },
-  "266": {
-    "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
-    "column": "explain_grammar",
-    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
-  },
-  "267": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "explain_grammar",
-    "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
-  },
-  "268": {
-    "kind": "Nghe - đọc câu hỏi và ghép câu trả lời",
-    "column": "explain_grammar",
-    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
-  },
-  "269": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "explain_grammar",
-    "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
-  },
-  "270": {
-    "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
-    "column": "explain_grammar",
-    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
-  },
-  "271": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "explain_grammar",
-    "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
-  },
-  "272": {
-    "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
-    "column": "explain_grammar",
-    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
   }
 }
