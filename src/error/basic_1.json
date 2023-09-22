@@ -1,0 +1,338 @@
+[
+    {
+        "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+        "count_questions": 1,
+        "text_question": "Đâu là \"Xin chào.\"?",
+        "column": "kana_answer\nromanji_answer\nexplain\nexplain\n",
+        "content": "Khớp với cột answer\nKhớp với cột kana_answer\nKhớp với đáp án ở cột answer mà tương ứng theo correct answer\nKhớp với đáp án ở cột kana_answer mà tương ứng theo correct answer\n"
+    },
+    {
+        "kind": "Nghe và chọn từ - phiên âm",
+        "count_questions": 3,
+        "text_question": "",
+        "column": "audio\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với audio\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 4,
+        "text_question": "お父さん",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "count_questions": 5,
+        "text_question": "こんにちは、お父さん",
+        "column": "audio\nanswer\nanswer\naudio\nexplain\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\nTương ứng theo correct answer (ghép thành 1 dòng)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
+        "count_questions": 7,
+        "text_question": "父／お父さん",
+        "column": "audio\naudio\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "count_questions": 9,
+        "text_question": "con trai",
+        "column": "explain\n",
+        "content": "Nghĩa phải giống với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
+        "count_questions": 10,
+        "text_question": "息子",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+        "count_questions": 11,
+        "text_question": "Đâu là \"Tạm biệt.\"?",
+        "column": "kana_answer\nromanji_answer\nexplain\nexplain\n",
+        "content": "Khớp với cột answer\nKhớp với cột kana_answer\nKhớp với đáp án ở cột answer mà tương ứng theo correct answer\nKhớp với đáp án ở cột kana_answer mà tương ứng theo correct answer\n"
+    },
+    {
+        "kind": "Nghe và chọn nghĩa",
+        "count_questions": 12,
+        "text_question": "",
+        "column": "audio\nanswer\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nViết bằng tiếng Nhật\nGiống với audio\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "count_questions": 13,
+        "text_question": "bố",
+        "column": "explain\n",
+        "content": "Nghĩa phải giống với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "count_questions": 14,
+        "text_question": "Tạm biệt, con trai.",
+        "column": "audio\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 2,
+        "text_question": "<p>私は父です。</p>",
+        "column": "text_question\naudio\naudio\nexplain\nexplain\n",
+        "content": "Viết bằng tiếng Nhật\nKhông có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "count_questions": 3,
+        "text_question": "私は息子です。",
+        "column": "audio\naudio\nanswer\nanswer\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe và chọn nghĩa",
+        "count_questions": 4,
+        "text_question": "",
+        "column": "audio\nanswer\n",
+        "content": "Không có <p></p> hay <h></h>\nViết bằng tiếng Nhật\n"
+    },
+    {
+        "kind": "Nghe và ghép từ thành câu",
+        "count_questions": 5,
+        "text_question": "",
+        "column": "audio\nanswer\nanswer\nkana_answer\nromanji_answer\ncorect_answer\nexplain\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nCho phép có thêm các từ/cụm từ gây nhiễu\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhớp với cột answer\nKhớp với cột kana_answer\nKhi ghép lại thành 1 dòng thì trùng với audio\nHình thức kana khớp với correct_answer khi ghép lại thành 1 dòng\nHình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
+        "count_questions": 6,
+        "text_question": "私",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "count_questions": 9,
+        "text_question": "彼は父です。",
+        "column": "audio\nanswer\nanswer\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "count_questions": 10,
+        "text_question": "Anh ấy là con trai.",
+        "column": "audio\nexplain\nexplain\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhớp với kana_answer tương ứng theo correct_answer\nKhớp với romaji_answer tương ứng theo correct_answer\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 11,
+        "text_question": "彼",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "count_questions": 12,
+        "text_question": "彼は父です。",
+        "column": "audio\nanswer\nanswer\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "count_questions": 13,
+        "text_question": "Anh ấy là con trai.",
+        "column": "audio\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
+        "count_questions": 14,
+        "text_question": "彼",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "count_questions": 15,
+        "text_question": "tôi",
+        "column": "explain\n",
+        "content": "Nghĩa phải giống với text_question\n"
+    },
+    {
+        "kind": "Nghe và chọn từ - phiên âm",
+        "count_questions": 17,
+        "text_question": "",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
+        "count_questions": 18,
+        "text_question": "Tôi là bố.",
+        "column": "audio\nanswer\nkana_answer\nromanji_answer\ncorect_answer\nexplain\nexplain\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhớp với cột answer\nKhớp với cột kana_answer\nKhi ghép lại thành 1 dòng thì trùng với audio\nHình thức kana khớp với correct_answer khi ghép lại thành 1 dòng\nHình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 2,
+        "text_question": "私は母です。",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "count_questions": 4,
+        "text_question": "<p>貴方</p>は娘です。",
+        "column": "text_question\naudio\naudio\nanswer\nanswer\naudio\nexplain\nexplain\n",
+        "content": "Viết bằng tiếng Nhật\nKhông có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
+        "count_questions": 5,
+        "text_question": "娘",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Nghe và ghép từ thành câu",
+        "count_questions": 6,
+        "text_question": "",
+        "column": "audio\nanswer\nkana_answer\nromanji_answer\ncorect_answer\nexplain\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhớp với cột answer\nKhớp với cột kana_answer\nKhi ghép lại thành 1 dòng thì trùng với audio\nHình thức kana khớp với correct_answer khi ghép lại thành 1 dòng\nHình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 7,
+        "text_question": "貴方",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
+        "count_questions": 8,
+        "text_question": "貴方",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
+        "count_questions": 10,
+        "text_question": "母／お母さん",
+        "column": "audio\naudio\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 12,
+        "text_question": "彼女は母です。",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "count_questions": 13,
+        "text_question": "Cô ấy là con gái.",
+        "column": "audio\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 14,
+        "text_question": "彼女は母です。",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
+        "count_questions": 15,
+        "text_question": "彼女",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "count_questions": 17,
+        "text_question": "Bạn là con trai.",
+        "column": "audio\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "count_questions": 18,
+        "text_question": "cô ấy",
+        "column": "audio\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
+        "count_questions": 19,
+        "text_question": "Cô ấy là con gái.",
+        "column": "audio\nanswer\nkana_answer\nromanji_answer\ncorect_answer\nexplain\nexplain\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhớp với cột answer\nKhớp với cột kana_answer\nKhi ghép lại thành 1 dòng thì trùng với audio\nHình thức kana khớp với correct_answer khi ghép lại thành 1 dòng\nHình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\nKhớp với text_question\n"
+    },
+    {
+        "kind": "Nghe và chọn từ - phiên âm",
+        "count_questions": 1,
+        "text_question": "",
+        "column": "audio\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với audio\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "count_questions": 2,
+        "text_question": "con trai",
+        "column": "explain\n",
+        "content": "Nghĩa phải giống với text_question\n"
+    },
+    {
+        "kind": "Nghe và chọn nghĩa",
+        "count_questions": 3,
+        "text_question": "",
+        "column": "audio\nanswer\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nViết bằng tiếng Nhật\nGiống với audio\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "count_questions": 4,
+        "text_question": "私は息子です。",
+        "column": "audio\naudio\nanswer\nanswer\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "count_questions": 5,
+        "text_question": "彼は父です。",
+        "column": "audio\nanswer\nanswer\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 7,
+        "text_question": "彼女は母です。",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "count_questions": 8,
+        "text_question": "貴方",
+        "column": "audio\naudio\nexplain\nexplain\nexplain_grammar\n",
+        "content": "Không có <p></p> hay <h></h>\nGiống với text question (bỏ <p></p> nếu có)\nGiống với kana_question (bỏ <p></p> nếu có)\nGiống với romaji_question (bỏ <p></p> nếu có)\n Nếu text_question có <p></p> thì phải điền explain_grammar.\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (1 từ)",
+        "count_questions": 9,
+        "text_question": "娘",
+        "column": "audio\n",
+        "content": "Không có <p></p> hay <h></h>\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
+        "count_questions": 10,
+        "text_question": "Tôi là bố.",
+        "column": "audio\nanswer\nkana_answer\nromanji_answer\ncorect_answer\nexplain\nexplain\nexplain\n",
+        "content": "Không có <p></p> hay <h></h>\nKhông có dấu \".\" hết câu, không viết hoa đầu câu (trừ khi là tên riêng)\nKhớp với cột answer\nKhớp với cột kana_answer\nKhi ghép lại thành 1 dòng thì trùng với audio\nHình thức kana khớp với correct_answer khi ghép lại thành 1 dòng\nHình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\nKhớp với text_question\n"
+    }
+]

@@ -10,27 +10,39 @@ class Kind_D2_Service:
         self.obj = obj
 
     def E2(self, text_question):
-        return [1] if not helper.check_E2_structure_where(text_question) else []
+        arr_error = []
+        if not helper.check_E2_structure_where(text_question):
+            arr_error.append(1)
+        return arr_error
 
     def L2(self, answer):
         arr_error = []
-        arr_error = [13] if not helper.check_L2_has_two_or_four_answers(answer) else [
-        ]
+        if not helper.check_L2_has_two_or_four_answers(answer):
+            arr_error.append(13)
         if not helper.check_E3_written_by_japanese(answer):
             arr_error.append(
                 2)
         return arr_error
 
     def M2(self, kana_answer, answer):
-        return [26] if not helper.check_F3_match_column(kana_answer, answer) else []
+        arr_error = []
+        if not helper.check_F3_match_column(kana_answer, answer):
+            arr_error.append(26)
+        return arr_error
 
     def N2(self, romanji_answer, kana_answer):
-        return [28] if not helper.check_F3_match_column(romanji_answer, kana_answer) else []
+        arr_error = []
+        if not helper.check_F3_match_column(romanji_answer, kana_answer):
+            arr_error.append(28)
+        return arr_error
 
     def S2(self, corect_answer):
-        return [30] if not helper.check_S2_type_number(corect_answer) else []
+        arr_error = []
+        if not helper.check_S2_type_number(corect_answer):
+            arr_error.append(30)
+        return arr_error
 
-    def T2(self, explain, answer, kana_answer, romanji_answer, corect_answer, text_question):
+    def T2(self, explain, answer, corect_answer, kana_answer, romanji_answer, text_question):
         arr_error = []
         if not helper.check_T2_explain_match_answer_and_correct_answer_type_1(explain, answer, corect_answer):
             arr_error.append(
@@ -55,7 +67,7 @@ class Kind_D2_Service:
             self.M2(kind_data["kana_answer"], kind_data["answer"]),
             self.N2(kind_data["romanji_answer"], kind_data["kana_answer"]),
             self.S2(kind_data["corect_answer"]),
-            self.T2(kind_data["explain"], kind_data["answer"], kind_data["kana_answer"],
-                    kind_data["romanji_answer"], kind_data["corect_answer"], kind_data["text_question"])
+            self.T2(kind_data["explain"], kind_data["answer"], kind_data["corect_answer"],
+                    kind_data["kana_answer"], kind_data["romanji_answer"], kind_data["text_question"])
         ]
         return common.flatten_recursive(arr_error)

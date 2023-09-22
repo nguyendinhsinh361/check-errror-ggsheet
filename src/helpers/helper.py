@@ -51,15 +51,15 @@ def check_F3_match_column(col1, col2):
 def check_I11_written_by_capital_vietnamese(text):
     return common.is_vietnamese(text) and text == text.upper()
 
-# Column audio
+# Column audio_question
 
 
 def check_J3_have_tag_p_or_h(text):
     return bool(re.search(r'<[phPH][^>]*>.*?</[phPH]>', text))
 
 
-def check_J3_like_column(col1_audio, col2_text_question):
-    clean_text = common.get_clean_text(col1_audio)
+def check_J3_like_column(col1_audio_question, col2_text_question):
+    clean_text = common.get_clean_text(col1_audio_question)
     return clean_text == col2_text_question
 
 # Column image
@@ -113,17 +113,17 @@ def check_L4_order_words_diff(col1_answer, col2_correct_ans):
     return all(words_col2[i] == words_col1[i] for i in range(len(words_col2)))
 
 
-def check_L9_audio_contains_answers_accept_dots(col1_answer, col2_audio):
+def check_L9_audio_question_contains_answers_accept_dots(col1_answer, col2_audio_question):
     words_col1 = [element.strip() for element in col1_answer.split(
         "\n") if element.strip() != ""]
-    return any(str(element.rstrip(".")) == str(col2_audio.rstrip("."))
+    return any(str(element.rstrip(".")) == str(col2_audio_question.rstrip("."))
                for element in words_col1)
 
 
-def check_L13_audio_contains_answers(col1_answer, col2_audio):
+def check_L13_audio_question_contains_answers(col1_answer, col2_audio_question):
     words_col1 = [element.strip() for element in col1_answer.split(
         "\n") if element.strip() != ""]
-    return any(str(element) == str(col2_audio) for element in words_col1)
+    return any(str(element) == str(col2_audio_question) for element in words_col1)
 
 
 def check_L17_count_japanese_words(text):
@@ -151,7 +151,12 @@ def check_L21_muitii_line_breaks(text):
 
 # Column Image_answer
 
+def check_R16_two_or_four_img(Image_answer):
+    # Pending
+    return True
+
 # Column corect_answer
+
 
 def check_S2_type_number(text):
     return common.is_number(text)
@@ -162,17 +167,24 @@ def check_S4_pairing_method(text):
     return True
 
 
+def check_S10_like_audo_question(col1_correct_answer, col2_audio_question):
+    words_col1 = [element.strip() for element in col1_correct_answer.split(
+        "\n") if element.strip() != ""]
+    words_col1_completed = "".join(words_col1)
+    return words_col1_completed.strip() == col2_audio_question.strip()
+
+
 def check_S13_type_number_and_like_number_audio(text):
     # Pending
     another_con = True
     return common.is_number(text) and another_con
 
 
-def check_S14_correct_answer_like_audio(col1_corect_answer, col2_audio):
+def check_S14_correct_answer_like_audio_question(col1_corect_answer, col2_audio_question):
     line = [element.strip()
             for element in col1_corect_answer.split("\n") if element.strip() != ""]
     completed_text = "".join(line)
-    return completed_text == col2_audio
+    return completed_text == col2_audio_question
 
 
 def check_S19_correct_answer_has_pair_of_parentheses_and_like_answer(col1_corect_answer, col2_answer):
@@ -204,7 +216,9 @@ def check_T2_explain_match_answer_and_romanji_answer_type_1(col1_explain, col2_r
 
 
 def check_T2_explain_mean_like_text_question_type_1(col1_explain, col2_text_question):
-    check = col2_text_question.split("\"")[1].strip()
+    check = ""
+    if (len(col2_text_question.split("\"")) > 1):
+        check = col2_text_question.split("\"")[1].strip()
     explain_text_question = col1_explain.split("))")
     if (len(explain_text_question) < 2):
         explain_text_question = col1_explain.split("]]")
@@ -215,24 +229,34 @@ def check_T2_explain_mean_like_text_question_type_1(col1_explain, col2_text_ques
 
 def check_T3_explain_mean_like_text_question_type_2(col1_explain, col2_text_question):
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_text_question))
+    col2_text_question_clean = ""
+    if check_tag_p:
+        col2_text_question_clean = common.get_clean_text(col2_text_question)
     condition = r'\{\{(.*?)\}\}'
-    return not check_tag_p and common.check_explain_match_type_2(
-        col1_explain, col2_text_question, condition)
+    return common.check_explain_match_type_2(
+        col1_explain, col2_text_question_clean, condition)
 
 
 def check_T3_explain_mean_like_kana_question_type_2(col1_explain, col2_kana_question):
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_kana_question))
+    col2_kana_question_clean = ""
+    if check_tag_p:
+        col2_kana_question_clean = common.get_clean_text(col2_kana_question)
     condition = r'\[\[(.*?)\]\]'
-    return not check_tag_p and common.check_explain_match_type_2(
-        col1_explain, col2_kana_question, condition)
+    return common.check_explain_match_type_2(
+        col1_explain, col2_kana_question_clean, condition)
 
 
 def check_T3_explain_mean_like_romanji_question_type_2(col1_explain, col2_romanji_question):
     check_tag_p = bool(
         re.search(r'<[pP][^>]*>.*?</[pP]>', col2_romanji_question))
+    col2_romanji_question_clean = ""
+    if check_tag_p:
+        col2_romanji_question_clean = common.get_clean_text(
+            col2_romanji_question)
     condition = r'\(\((.*?)\)\)'
-    return not check_tag_p and common.check_explain_match_type_2(
-        col1_explain, col2_romanji_question, condition)
+    return common.check_explain_match_type_2(
+        col1_explain, col2_romanji_question_clean, condition)
 
 
 def check_T3_explain_mean_match_correct_answer_type_2(col1_explain, col2_answer, col3_correct_answer):
@@ -262,31 +286,54 @@ def check_T4_count_explain(col1_explain, col2_answer):
     return True
 
 
-def check_T8_form_kana(col1_explain, col2_correct_answer):
+def check_T5_check_mean_vietnamese(explain):
+    explain_answer = explain.split("))")
+    if (len(explain_answer) < 2):
+        explain_answer = explain.split("]]")
+    if (len(explain_answer) < 2):
+        explain_answer = explain.split("}}")
+    return check_E13_written_by_vietnamese(explain_answer[-1].strip().rstrip("."))
+
+
+def check_T6_form_kana(col1_explain, col2_kana_answer, col3_correct_answer):
     # Pending ???
     return True
 
 
-def check_T8_form_romanji(col1_explain, col2_correct_answer):
+def check_T6_form_romanji(col1_explain, col2_romanji_answer, col3_correct_answer):
     # Pending ???
     return True
 
 
-def check_T9_explain_like_audio(col1_explain, audio):
+def check_T9_explain_like_audio_question(col1_explain, audio_question):
     explain_jp = re.findall(r'\{\{(.*?)\}\}', col1_explain)
-    if not audio and not explain_jp:
+    if not audio_question and not explain_jp:
         return True
-    if not explain_jp or not audio:
+    if not explain_jp or not audio_question:
         return False
-    return explain_jp[0].strip() == audio.strip()
+    return explain_jp[0].strip() == audio_question.strip()
 
 
-def check_T15_form_kana_of_audio(col1_explain, audio):
+def check_T10_form_kana_match_correct_answer(col1_explain, col2_correct_answer):
+    kana_jp = re.findall(r'\[\[(.*?)\]\]', col1_explain)
+    correct_answer_text = [element.strip() for element in col2_correct_answer.split(
+        "\n") if element.strip() != ""]
+    return kana_jp[0].strip() == "".join(correct_answer_text).strip()
+
+
+def check_T10_form_romanji_match_kana_answer(col1_explain, col2_kana_answer):
+    romanji_jp = re.findall(r'\(\((.*?)\)\)', col1_explain)
+    kana_answer_text = [element.strip() for element in col2_kana_answer.split(
+        "\n") if element.strip() != ""]
+    return romanji_jp[0].strip() == "".join(kana_answer_text).strip()
+
+
+def check_T15_form_kana_of_audio_question(col1_explain, audio_question):
     # Pending ???
     return True
 
 
-def check_T15_form_romanji_of_audio(col1_explain, audio):
+def check_T15_form_romanji_of_audio_question(col1_explain, audio_question):
     # Pending ???
     return True
 
@@ -296,47 +343,47 @@ def check_T17_expression_kanji_of_correct_answer(col1_explain, col2_correct_answ
     return True
 
 
-def check_T17_complete_sentences_answer_combining_correct_answer(col1_explain, col2_correct_answer):
+def check_T18_complete_sentences_answer_combining_correct_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T17_complete_sentences_answer_combining_kana_answer(col1_explain, col2_correct_answer):
+def check_T18_complete_sentences_answer_combining_kana_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T17_complete_sentences_answer_combining_romanji_answer(col1_explain, col2_correct_answer):
+def check_T18_complete_sentences_answer_combining_romanji_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T18_complete_sentences_text_combining_correct_answer(col1_explain, col2_correct_answer):
+def check_T19_complete_sentences_text_combining_correct_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T18_complete_sentences_text_combining_kana_answer(col1_explain, col2_correct_answer):
+def check_T19_complete_sentences_text_combining_kana_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T18_complete_sentences_text_combining_romanji_answer(col1_explain, col2_correct_answer):
+def check_T19_complete_sentences_text_combining_romanji_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T19_complete_sentences_drop_text_combining_correct_answer(col1_explain, col2_correct_answer):
+def check_T21_complete_sentences_drop_text_combining_correct_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T19_complete_sentences_drop_text_combining_kana_answer(col1_explain, col2_correct_answer):
+def check_T21_complete_sentences_drop_text_combining_kana_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
 
-def check_T19_complete_sentences_drop_text_combining_romanji_answer(col1_explain, col2_correct_answer):
+def check_T21_complete_sentences_drop_text_combining_romanji_answer(col1_explain, col2_correct_answer):
     # Pending ???
     return True
 
@@ -347,5 +394,10 @@ def check_V3_explain_grammar(col1_explain_grammar, col2_text_question):
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_text_question))
     if check_tag_p and not col1_explain_grammar:
         return False
+    return check_tag_p
+
+
+def check_V3_number_explain_grammar(col1_explain_grammar, col2_text_question):
+    # Pending
     condition_explain_number = True
     return condition_explain_number

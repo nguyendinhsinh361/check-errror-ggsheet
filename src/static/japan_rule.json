@@ -270,5 +270,73 @@
   "68": {
     "column": "explain_grammar",
     "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
+  },
+  "69": {
+    "column": "audio_question",
+    "content": "Viết bằng tiếng Nhật"
+  },
+  "70": {
+    "column": "mean_question",
+    "content": "Viết bằng tiếng Việt"
+  },
+  "71": {
+    "column": "answer",
+    "content": "Viết bằng tiếng Nhật"
+  },
+  "72": {
+    "column": "corect_answer",
+    "content": "Viết bằng tiếng Nhật"
+  },
+  "73": {
+    "column": "answer",
+    "content": "Viết bằng tiếng Nhật"
+  },
+  "74": {
+    "column": "corect_answer",
+    "content": "Viết bằng tiếng Việt"
+  },
+  "75": {
+    "column": "corect_answer",
+    "content": "Ngắt thành nhiều dòng"
+  },
+  "76": {
+    "column": "explain",
+    "content": "Nghĩa viết bằng tiếng Việt"
+  },
+  "77": {
+    "column": "hanviet_question",
+    "content": "Viết bằng tiếng Việt in hoa"
+  },
+  "78": {
+    "column": "image",
+    "content": "Mô tả về hình ảnh"
+  },
+  "79": {
+    "column": "answer",
+    "content": "Mỗi dòng chứa 1 chữ cái đơn hoặc chữ cái ghép trong tiếng Nhật"
+  },
+  "80": {
+    "column": "answer",
+    "content": "Chứa đủ các chữ ở cột correct_answer"
+  },
+  "81": {
+    "column": "answer",
+    "content": "Cho phép có thêm các chữ gây nhiễu"
+  },
+  "82": {
+    "column": "answer",
+    "content": "Không có bất kỳ dấu câu nào"
+  },
+  "83": {
+    "column": "answer",
+    "content": "Trật tự các dòng k được giống hệt correct_answer"
+  },
+  "84": {
+    "column": "corect_answer",
+    "content": "Mỗi dòng chứa 1 chữ cái đơn hoặc chữ cái ghép trong tiếng Nhật"
+  },
+  "85": {
+    "column": "corect_answer",
+    "content": "text được điền vào 1 trong các () và phải khớp với text ở cột answer"
   }
 }

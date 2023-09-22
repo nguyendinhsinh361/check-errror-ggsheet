@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import re
 import json
+import pandas as pd
 
 
 def is_japanese(word):
@@ -92,3 +93,8 @@ def get_raw_data(path):
 def save_data_to_json(data, path):
     with open(path, 'w', encoding='utf-8') as json_file:
         json.dump(data, json_file, ensure_ascii=False, indent=4)
+
+
+def convert_json_to_excel(data, path_excel):
+    df = pd.DataFrame(data)
+    df.to_excel(path_excel, index=False, engine='openpyxl')
