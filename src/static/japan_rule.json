@@ -116,19 +116,19 @@
     "content": "2 hoặc 4 ảnh"
   },
   "30": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "Đáp án dạng số"
   },
   "31": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "Có thể có nhiều cách ghép, các cách ghép ngăn cách nhau bằng ###"
   },
   "32": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": " Đáp án dạng số (trùng với stt của đáp án giống audio)"
   },
   "33": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "Khi ghép lại thành 1 dòng thì trùng với audio"
   },
   "34": {
@@ -272,7 +272,7 @@
     "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
   },
   "69": {
-    "column": "audio_question",
+    "column": "audio",
     "content": "Viết bằng tiếng Nhật"
   },
   "70": {
@@ -284,19 +284,19 @@
     "content": "Viết bằng tiếng Nhật"
   },
   "72": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "Viết bằng tiếng Nhật"
   },
   "73": {
     "column": "answer",
-    "content": "Viết bằng tiếng Nhật"
+    "content": "Viết bằng tiếng Việt"
   },
   "74": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "Viết bằng tiếng Việt"
   },
   "75": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "Ngắt thành nhiều dòng"
   },
   "76": {
@@ -332,11 +332,123 @@
     "content": "Trật tự các dòng k được giống hệt correct_answer"
   },
   "84": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "Mỗi dòng chứa 1 chữ cái đơn hoặc chữ cái ghép trong tiếng Nhật"
   },
   "85": {
-    "column": "corect_answer",
+    "column": "correct_answer",
     "content": "text được điền vào 1 trong các () và phải khớp với text ở cột answer"
+  },
+  "86": {
+    "column": "explain",
+    "content": "Giống với text question (bỏ <p></p> nếu có)"
+  },
+  "87": {
+    "column": "explain",
+    "content": "Sai ở {{}}"
+  },
+  "88": {
+    "column": "explain",
+    "content": "Sai ở [[]]"
+  },
+  "89": {
+    "column": "explain",
+    "content": "Sai ở (())"
+  },
+  "90": {
+    "column": "explain",
+    "content": "Sô lượng thẻ <p></p> phải bằng nhau"
+  },
+  "91": {
+    "column": "corect_answer",
+    "content": "Sai ở ###"
+  },
+  "92": {
+    "column": "explain",
+    "content": "Sai ở ###"
+  },
+  "93": {
+    "column": "audio",
+    "content": "Viết bằng tiếng Nhật"
+  },
+  "94": {
+    "column": "audio",
+    "content": "Không có <p></p> hay <h></h>"
+  },
+  "95": {
+    "column": "explain",
+    "content": "Khớp với audio"
+  },
+  "96": {
+    "column": "explain",
+    "content": "Hình thức kana của audio"
+  },
+  "97": {
+    "column": "explain",
+    "content": "Hình thức romaji của audio"
+  },
+  "98": {
+    "column": "explain",
+    "content": "Nghĩa tiếng Việt"
+  },
+  "99": {
+    "column": "text_question",
+    "content": "Viết bằng tiếng Nhật"
+  },
+  "100": {
+    "column": "kana_question",
+    "content": "Khớp với cột text_question"
+  },
+  "101": {
+    "column": "kana_question",
+    "content": "Khớp với cột kana_question"
+  },
+  "102": {
+    "column": "romaji_question",
+    "content": "Khớp với cột kana_question"
+  },
+  "103": {
+    "column": "mean_question",
+    "content": "Viết bằng tiếng Việt"
+  },
+  "104": {
+    "column": "audio",
+    "content": "Viết bằng tiếng Nhật"
+  },
+  "105": {
+    "column": "audio",
+    "content": "Không có <p></p> hay <h></h>"
+  },
+  "106": {
+    "column": "audio",
+    "content": "Giống với text question (bỏ <p></p> nếu có)"
+  },
+  "107": {
+    "column": "explain_grammar",
+    "content": "Nếu text_question có <p></p> thì phải điền explain_grammar."
+  },
+  "108": {
+    "column": "explain_grammar",
+    "content": "Số lượng giải thích tương ứng với số lượng <p></p>"
+  },
+  "109": {
+    "column": "text_question",
+    "content": "Sai ở thẻ <p></p>"
+  },
+  "110": {
+    "column": "kana_question",
+    "content": "Sai ở thẻ <p></p>"
+  },
+  "111": {
+    "column": "romaji_question",
+    "content": "Sai ở thẻ <p></p>"
+  },
+  "112": {
+    "column": "Count questions",
+    "content": "Số thứ tự phải nhảy cách"
+  },
+  "113": {
+    "column": "Lesson",
+    "content": "Phải trùng với tên sheet khi đã bỏ \"STT_\""
   }
 }

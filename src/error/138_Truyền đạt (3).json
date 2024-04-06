@@ -1,0 +1,20 @@
+[
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "栄養、バランス、紛らわしい\n…ように言う／注意する／伝える／頼む",
+        "count_questions": 1,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "unit": "栄養、バランス、紛らわしい\n…ように言う／注意する／伝える／頼む",
+        "count_questions": 18,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc từ (câu) và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 3,
+        "content": "- mean_question: Viết bằng tiếng Việt\n"
+    }
+]

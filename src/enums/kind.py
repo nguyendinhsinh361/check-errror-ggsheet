@@ -23,3 +23,5 @@ class Kind(Enum):
     KIND_20 = 'Đọc nghĩa và chọn từ - phiên âm'
     KIND_21 = 'Đọc câu và bỏ từ hoặc cụm từ thừa'
     KIND_22 = 'Đọc nghĩa và ghép từ thành câu'
+    KIND_23 = 'Nghe và nói lại'
+    KIND_24 = 'Nghe - đọc từ (câu) và nói lại'

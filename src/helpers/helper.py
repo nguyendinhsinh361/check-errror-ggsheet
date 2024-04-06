@@ -1,222 +1,395 @@
 from src.helpers import common
 import re
+from bs4 import BeautifulSoup
+import unicodedata
 # Column text_question
 
 
+def check_E2_has_tag_p_same(text_question):
+    if (not text_question):
+        return False
+    return common.get_number_tag_p(text_question)
+
+
 def check_E2_structure_where(text):
+    if (not text):
+        return False
     check = text.split("\"")
+    if (len(check) < 2):
+        return False
     return common.is_vietnamese(check[1]) and check[0].strip() == "Đâu là" and check[2].strip() == "?"
 
 
 def check_E3_written_by_japanese(text):
-    return all(common.is_japanese(element) or not common.is_latin(element) for element in text)
+    text = text.strip("\n")
+    if (not text):
+        return False
+    clean_text = common.get_text_from_html(text)
+    return any(common.is_japanese(element) for element in clean_text)
 
 
 def check_E11_appear_only_have_one_han_char(text):
+    if (not text):
+        return False
     return common.count_han_words(text) == 1
 
 
 def check_E12_appear_more_two_han_char(text):
+    if (not text):
+        return False
     return common.count_han_words(text) >= 2
 
 
 def check_E13_written_by_vietnamese(text):
-    return not check_E3_written_by_japanese(text)
+    text = text.strip("\n")
+    if (not text):
+        return False
+    text_completed = text.split("(")
+
+    return not check_E3_written_by_japanese(text_completed[0])
 
 
 def check_E17_structure_translate(text):
+    if (not text):
+        return False
     check = text.split("\"")
     return common.is_vietnamese(check[1]) and check[0].strip() == "Dịch" and check[2].strip() == ""
 
 
 def check_E18_contain_a_pair_of_parentheses(text):
+    if (not text):
+        return False
     return common.count_pair_of_parentheses(text) == 1
 
 
 def check_E19_contain_more_pair_of_parentheses(text):
+    if (not text):
+        return False
     return common.count_pair_of_parentheses(text) >= 1
+
+
+def check_format_tag_p(text):
+    if "<p>" in text or "</p>" in text:
+        return common.get_number_tag_p(text)
+    return True
 
 
 # Column kana_question
 
 def check_F3_match_column(col1, col2):
-    words_col1 = [element.strip() for element in col1.split(
+    if (not col1):
+        return False
+    words_col1 = [common.remove_special_characters(element.strip()) for element in col1.split(
         "\n") if element.strip() != ""]
-    words_col2 = [element.strip() for element in col2.split(
+    words_col2 = [common.remove_special_characters(element.strip()) for element in col2.split(
         "\n") if element.strip() != ""]
-    return len(words_col1) == len(words_col2)
+    condition_1 = len(words_col1) == len(words_col2)
+    check_html_col1 = check_format_tag_p(col1)
+    check_html_col2 = check_format_tag_p(col2)
+    check_tag_p_in_two_col = common.get_number_tag_p_for_colum_detail(col1) == common.get_number_tag_p_for_colum_detail(col2)
+    condtion_2 = check_html_col1 and check_html_col2 and check_tag_p_in_two_col
+    return condition_1 and condtion_2
 # Column hanviet_question
 
 
 def check_I11_written_by_capital_vietnamese(text):
+    if (not text):
+        return False
     return common.is_vietnamese(text) and text == text.upper()
 
-# Column audio_question
+# Column audio
 
 
+# Checking
 def check_J3_have_tag_p_or_h(text):
+    if (not text):
+        return False
     return bool(re.search(r'<[phPH][^>]*>.*?</[phPH]>', text))
 
 
-def check_J3_like_column(col1_audio_question, col2_text_question):
-    clean_text = common.get_clean_text(col1_audio_question)
-    return clean_text == col2_text_question
+def check_J3_like_column(col1_audio, col2_text_question):
+    if (not col1_audio):
+        return False
+    text_question = col2_text_question.split('[な]')[0]
+    text_question = text_question.replace("\n", "")
+    clean_text = common.get_text_from_html(text_question)
+    return common.clean_text(clean_text) == common.clean_text(col1_audio)
 
 # Column image
 
 
 def check_K17_has_content(text):
+    if (not text):
+        return False
     return bool(text)
 
 # Column answer
 
 
 def check_L2_has_two_or_four_answers(text):
+    if (not text):
+        return False
     answer_arr = text.split("\n")
-    answer_arr = [element.strip()
+    answer_arr = [common.remove_special_characters(element.strip())
                   for element in answer_arr if element.strip() != ""]
     return len(answer_arr) == 2 or len(answer_arr) == 4
 
 
 def check_L3_has_max_four_answers(text):
+    if (not text):
+        return False
     answer_arr = text.split("\n")
-    answer_arr = [element.strip()
+    answer_arr = [common.remove_special_characters(element.strip())
                   for element in answer_arr if element.strip() != ""]
     return len(answer_arr) <= 4 and len(set(answer_arr)) == len(answer_arr)
 
 
 def check_L4_contains_enough_words(col1_answer, col2_correct_ans):
-    words_col1 = [element.strip() for element in col1_answer.split(
-        "\n") if element.strip() != ""]
-    words_col2 = [element.strip() for element in col2_correct_ans.split(
-        "\n") if element.strip() != ""]
-    return all(element in words_col1 for element in words_col2)
+    try:
+        if (not col1_answer):
+            return False
+        words_col1 = [common.remove_special_characters(element.strip()) for element in col1_answer.split(
+            "\n") if element.strip() != "" and element[0].strip() != "#"]
+        words_col2 = [common.remove_special_characters(element.strip()) for element in col2_correct_ans.split(
+            "\n") if element.strip() != "" and element[0].strip() != "#"]
+        return all(element in words_col1 for element in words_col2)
+    except Exception as e:
+        print(col1_answer, col2_correct_ans)
 
 
 def check_L4_contains_noise_words(col1_answer, col2_correct_ans):
-    words_col1 = [element.strip() for element in col1_answer.split(
+    if (not col1_answer):
+        return False
+    words_col1 = [common.remove_special_characters(element.strip()) for element in col1_answer.split(
         "\n") if element.strip() != ""]
-    words_col2 = [element.strip() for element in col2_correct_ans.split(
-        "\n") if element.strip() != ""]
-    return len(words_col1) > len(words_col2) and not (len(set(words_col1)) == len(set(words_col2)))
+    words_col2 = [common.remove_special_characters(element.strip()) for element in col2_correct_ans.split(
+        "\n") if element.strip() != "" and element[0].strip() != "#"]
+    return not len(set(words_col1)) < len(set(words_col2))
 
 
 def check_L4_format_sentence(text):
-    return bool(text[len(text) - 1] == ".") or text[0] == text[0].upper()
+    if (not text):
+        return False
+    words = [common.remove_special_characters(element.strip())
+             for element in text.split("\n") if element.strip() != ""]
+    return any(bool(text[len(ele) - 1] == ".") for ele in words)
 
 
 def check_L4_order_words_diff(col1_answer, col2_correct_ans):
-    words_col1 = [element.strip() for element in col1_answer.split(
+    if (not col1_answer):
+        return False
+    words_col1 = [common.remove_special_characters(element.strip()) for element in col1_answer.split(
         "\n") if element.strip() != ""]
-    words_col2 = [element.strip() for element in col2_correct_ans.split(
+    words_col2 = [common.remove_special_characters(element.strip()) for element in col2_correct_ans.split(
         "\n") if element.strip() != ""]
+
     return all(words_col2[i] == words_col1[i] for i in range(len(words_col2)))
 
 
-def check_L9_audio_question_contains_answers_accept_dots(col1_answer, col2_audio_question):
-    words_col1 = [element.strip() for element in col1_answer.split(
+def check_L9_audio_contains_answers_accept_dots(col1_answer, col2_audio):
+    if (not col1_answer):
+        return False
+    words_col1 = [common.remove_special_characters(element.strip()) for element in col1_answer.split(
         "\n") if element.strip() != ""]
-    return any(str(element.rstrip(".")) == str(col2_audio_question.rstrip("."))
+    return any(str(element.rstrip(".")) == common.remove_special_characters(str(col2_audio.rstrip(".")))
                for element in words_col1)
 
 
-def check_L13_audio_question_contains_answers(col1_answer, col2_audio_question):
-    words_col1 = [element.strip() for element in col1_answer.split(
+def check_L13_audio_contains_answers(col1_answer, col2_audio):
+    if (not col1_answer):
+        return False
+    words_col1 = [common.remove_special_characters(element.strip()) for element in col1_answer.split(
         "\n") if element.strip() != ""]
-    return any(str(element) == str(col2_audio_question) for element in words_col1)
+    return any(str(element) == common.remove_special_characters(str(col2_audio)) for element in words_col1)
 
 
 def check_L17_count_japanese_words(text):
-    words = [element.strip()
+    if (not text):
+        return False
+    words = [common.remove_special_characters(element.strip())
              for element in text.split("\n") if element.strip() != ""]
     return all(len(element) <= 2 for element in words)
 
 
 def check_L17_has_punctuation(text):
-    words = [element.strip()
+    if (not text):
+        return False
+    words = [common.remove_special_characters(element.strip())
              for element in text.split("\n") if element.strip() != ""]
     words_str = "".join(words)
     return all(common.is_japanese(element) for element in words_str)
 
 
 def check_L19_structure_pair_of_parentheses(text):
-    return text.startswith('(') and text.endswith(')')
+    if (not text):
+        return False
+    return (text.startswith('(') and text.endswith('）')) or text.startswith('(') and text.endswith(')')
 
 
 def check_L21_muitii_line_breaks(text):
-    line = [element.strip()
+    if (not text):
+        return False
+    line = [common.remove_special_characters(element.strip())
             for element in text.split("\n") if element.strip() != ""]
     return len(line) > 1
 
 
 # Column Image_answer
 
-def check_R16_two_or_four_img(Image_answer):
+def check_R16_two_or_four_img(image_answer):
     # Pending
     return True
 
-# Column corect_answer
+# Column correct_answer
 
 
 def check_S2_type_number(text):
+    if (not text):
+        return False
     return common.is_number(text)
 
 
 def check_S4_pairing_method(text):
-    # Pending
-    return True
+    if (not text):
+        return False
+    pairing_method = [common.remove_special_characters(element.strip()) for element in text.split(
+        "\n") if element.strip() != "" and element[0].strip() != "#"]
+    return len(pairing_method) >= 1
 
 
-def check_S10_like_audo_question(col1_correct_answer, col2_audio_question):
-    words_col1 = [element.strip() for element in col1_correct_answer.split(
+def check_S4_format_combine_sentences(col1_correct_answer):
+    if (not col1_correct_answer):
+        return False
+    answer_arr = [ele for ele in col1_correct_answer.split("\n") if ele]
+    check = True
+    for tmp in answer_arr:
+        if (tmp.startswith("#")):
+
+            check = bool(tmp.strip() == "###")
+            if (not check):
+                return check
+    return check
+
+
+def check_S10_like_audo_question(col1_correct_answer, col2_audio):
+    if (not col1_correct_answer):
+        return False
+    words_col1 = [common.remove_special_characters(element.strip()) for element in col1_correct_answer.split(
         "\n") if element.strip() != ""]
     words_col1_completed = "".join(words_col1)
-    return words_col1_completed.strip() == col2_audio_question.strip()
+    return common.clean_text(words_col1_completed) == common.clean_text(common.remove_special_characters(col2_audio))
 
 
-def check_S13_type_number_and_like_number_audio(text):
-    # Pending
-    another_con = True
-    return common.is_number(text) and another_con
+def check_S13_type_number_and_like_number_audio(col1_correct_answer, col2_answer, col3_audio):
+    try:
+        if (not col1_correct_answer):
+            return False
+        answer_arr = [common.remove_special_characters(element.strip()) for element in col2_answer.split(
+            "\n") if element.strip() != ""]
+        return common.is_number(col1_correct_answer) and common.clean_text(answer_arr[(int(col1_correct_answer) - 1)]) == common.clean_text(common.remove_special_characters(col3_audio))
+    except Exception as e:
+        return False
 
 
-def check_S14_correct_answer_like_audio_question(col1_corect_answer, col2_audio_question):
-    line = [element.strip()
-            for element in col1_corect_answer.split("\n") if element.strip() != ""]
+def check_S14_correct_answer_like_audio(col1_correct_answer, col2_audio):
+    if (not col1_correct_answer):
+        return False
+    line = [common.remove_special_characters(element.strip())
+            for element in col1_correct_answer.split("\n") if element.strip() != ""]
     completed_text = "".join(line)
-    return completed_text == col2_audio_question
+    return common.clean_text(completed_text) == common.clean_text(common.remove_special_characters(col2_audio))
 
 
-def check_S19_correct_answer_has_pair_of_parentheses_and_like_answer(col1_corect_answer, col2_answer):
-    # Pending
-    open_count = col1_corect_answer.count('(')
-    close_count = col1_corect_answer.count(')')
-    another_con = True
-    return open_count > 1 and close_count > 1 and another_con
+def check_S19_correct_answer_has_pair_of_parentheses_and_like_answer(col1_correct_answer, col2_answer):
+    if (not col1_correct_answer):
+        return False
+    try:
+        matches_correct_answer = re.findall(r'\((.*?)\)', col1_correct_answer)
+        matches_answer = re.findall(r'\((.*?)\)', col2_answer)
+        if (not matches_answer):
+            matches_answer = re.findall(r'\((.*?)\）', col2_answer)
+        matches_correct_answer = [
+            common.remove_special_characters(element.strip()) for element in matches_correct_answer if element.strip() != ""]
+        matches_answer = [common.remove_special_characters(element.strip())
+                          for element in matches_answer if element.strip() != ""]
+        open_count = col1_correct_answer.count('(')
+        close_count = col1_correct_answer.count(')')
+        indices = [matches_correct_answer.index(
+            item) for item in matches_answer]
+        return bool(open_count > 1 and close_count > 1 and indices)
+    except Exception as e:
+        return False
 
 
 # Column explain
 
+def check_T2_brackets(col1_explain):
+    if (not col1_explain):
+        return False
+    arr_error = []
+    if (not check_T2_angle_brackets(col1_explain)):
+        arr_error.append(87)
+    elif (not check_T2_square_brackets(col1_explain)):
+        arr_error.append(88)
+    elif (not check_T2_round_brackets(col1_explain)):
+        arr_error.append(89)
+    return arr_error
+
+
+def check_T2_angle_brackets(col1_explain):
+    if (not col1_explain):
+        return False
+    condition = r'\{\{(.*?)\}\}'
+    return common.check_brackets(col1_explain, condition)
+
+
+def check_T2_square_brackets(col1_explain):
+    if (not col1_explain):
+        return False
+    condition = r'\[\[(.*?)\]\]'
+    return common.check_brackets(col1_explain, condition)
+
+
+def check_T2_round_brackets(col1_explain):
+    if (not col1_explain):
+        return False
+    condition = r'\(\((.*?)\)\)'
+    return common.check_brackets(col1_explain, condition)
+
 
 def check_T2_explain_match_answer_and_correct_answer_type_1(col1_explain, col2_answer, col3_correct_answer):
+    if (not col1_explain):
+        return False
     condition = r'\{\{(.*?)\}\}'
+    if (col2_answer and not col3_correct_answer):
+        return False
     return common.check_explain_match_type_1(col1_explain, col2_answer, col3_correct_answer, condition)
 
 
 def check_T2_explain_match_answer_and_kana_answer_type_1(col1_explain, col2_kana_answer, col3_correct_answer):
+    if (not col1_explain):
+        return False
     condition = r'\[\[(.*?)\]\]'
+    if (col2_kana_answer and not col3_correct_answer):
+        return False
     return common.check_explain_match_type_1(
         col1_explain, col2_kana_answer, col3_correct_answer, condition)
 
 
 def check_T2_explain_match_answer_and_romanji_answer_type_1(col1_explain, col2_romanji_answer, col3_correct_answer):
+    if (not col1_explain):
+        return False
     condition = r'\(\((.*?)\)\)'
+    if (col2_romanji_answer and not col3_correct_answer):
+        return False
     return common.check_explain_match_type_1(
         col1_explain, col2_romanji_answer, col3_correct_answer, condition)
 
 
 def check_T2_explain_mean_like_text_question_type_1(col1_explain, col2_text_question):
-    check = ""
+    if (not col1_explain):
+        return False
+    check = col2_text_question
     if (len(col2_text_question.split("\"")) > 1):
         check = col2_text_question.split("\"")[1].strip()
     explain_text_question = col1_explain.split("))")
@@ -224,168 +397,552 @@ def check_T2_explain_mean_like_text_question_type_1(col1_explain, col2_text_ques
         explain_text_question = col1_explain.split("]]")
     if (len(explain_text_question) < 2):
         explain_text_question = col1_explain.split("}}")
-    return check == explain_text_question[-1].strip()
+    explain_text_question_final = explain_text_question[-1].split("(tính từ đuôi い)")[
+        0]
+    explain_text_question_final = explain_text_question_final.split("(tính từ đuôi な)")[
+        0]
+    check = unicodedata.normalize('NFC', check)
+    explain_text_question_final = unicodedata.normalize(
+        'NFC', explain_text_question_final)
+    return common.clean_text(check) in common.clean_text(explain_text_question_final)
 
 
 def check_T3_explain_mean_like_text_question_type_2(col1_explain, col2_text_question):
+    if (not col1_explain):
+        return False
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_text_question))
-    col2_text_question_clean = ""
+    col2_text_question_clean = col2_text_question
     if check_tag_p:
-        col2_text_question_clean = common.get_clean_text(col2_text_question)
+        col2_text_question_clean = common.get_text_from_html(
+            col2_text_question)
+    col2_text_question_clean = col2_text_question_clean.replace("\n", "")
     condition = r'\{\{(.*?)\}\}'
+
     return common.check_explain_match_type_2(
         col1_explain, col2_text_question_clean, condition)
 
 
 def check_T3_explain_mean_like_kana_question_type_2(col1_explain, col2_kana_question):
+    if (not col1_explain):
+        return False
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_kana_question))
-    col2_kana_question_clean = ""
+    col2_kana_question_clean = col2_kana_question
     if check_tag_p:
-        col2_kana_question_clean = common.get_clean_text(col2_kana_question)
+        col2_kana_question_clean = common.get_text_from_html(
+            col2_kana_question)
+    col2_kana_question_clean = col2_kana_question_clean.replace("\n", "")
     condition = r'\[\[(.*?)\]\]'
     return common.check_explain_match_type_2(
         col1_explain, col2_kana_question_clean, condition)
 
 
 def check_T3_explain_mean_like_romanji_question_type_2(col1_explain, col2_romanji_question):
+    if (not col1_explain):
+        return False
     check_tag_p = bool(
         re.search(r'<[pP][^>]*>.*?</[pP]>', col2_romanji_question))
-    col2_romanji_question_clean = ""
+    col2_romanji_question_clean = col2_romanji_question
     if check_tag_p:
-        col2_romanji_question_clean = common.get_clean_text(
+        col2_romanji_question_clean = common.get_text_from_html_romanji(
             col2_romanji_question)
+    col2_romanji_question_clean = col2_romanji_question_clean.replace("\n", "")
     condition = r'\(\((.*?)\)\)'
+
     return common.check_explain_match_type_2(
         col1_explain, col2_romanji_question_clean, condition)
 
 
 def check_T3_explain_mean_match_correct_answer_type_2(col1_explain, col2_answer, col3_correct_answer):
-    explain_answer = col1_explain.split("))")
-    if (len(explain_answer) < 2):
-        explain_answer = col1_explain.split("]]")
-    if (len(explain_answer) < 2):
-        explain_answer = col1_explain.split("}}")
-    answers = [element.strip()
-               for element in col2_answer.split("\n") if element.strip() != ""]
-    return explain_answer[-1].strip() == answers[int(col3_correct_answer) - 1].strip()
+    if (not col1_explain):
+        return False
+    try:
+        explain_answer = col1_explain.split("))")
+        if (len(explain_answer) < 2):
+            explain_answer = col1_explain.split("]]")
+        if (len(explain_answer) < 2):
+            explain_answer = col1_explain.split("}}")
+        answers = [element.strip()
+                   for element in col2_answer.split("\n") if element.strip() != ""]
+        return common.clean_text(answers[int(col3_correct_answer) - 1]) in common.clean_text(explain_answer[-1])
+    except Exception as e:
+        return False
+
+
+def check_T4_explain_mean_like_text_question_type_2(col1_explain, col2_text_question):
+    if (not col1_explain):
+        return False
+    count_explain = [
+        tmp for tmp in col1_explain.split("###") if tmp]
+    check = False
+    for explain in count_explain:
+        check = check_T3_explain_mean_like_text_question_type_2(
+            explain, col2_text_question)
+    return check
+
+
+def check_T4_explain_mean_like_kana_question_type_2(col1_explain, col2_kana_question):
+    if (not col1_explain):
+        return False
+    count_explain = [
+        tmp for tmp in col1_explain.split("###") if tmp]
+    check = False
+    for explain in count_explain:
+        check = check_T3_explain_mean_like_kana_question_type_2(
+            explain, col2_kana_question)
+    return check
+
+
+def check_T4_explain_mean_like_romanji_question_type_2(col1_explain, col2_romanji_question):
+    if (not col1_explain):
+        return False
+    count_explain = [
+        tmp for tmp in col1_explain.split("###") if tmp]
+    check = False
+    for explain in count_explain:
+        check = check_T3_explain_mean_like_romanji_question_type_2(
+            explain, col2_romanji_question)
+    return check
 
 
 def check_T4_explain_mean_match_correct_answer_type_3(col1_explain, col2_correct_answer):
-    explain_answer = col1_explain.split("))")
-    if (len(explain_answer) < 2):
-        explain_answer = col1_explain.split("]]")
-    if (len(explain_answer) < 2):
-        explain_answer = col1_explain.split("}}")
-    answers = [element.strip()
-               for element in col2_correct_answer.split("\n") if element.strip() != ""]
-    return explain_answer[-1].strip().rstrip(".").upper() == " ".join(answers).strip().rstrip(".").upper()
+    if (not col1_explain):
+        return False
+    count_explain = [
+        tmp for tmp in col1_explain.split("###") if tmp]
+    count_correct_answer = [
+        common.remove_special_characters(tmp) for tmp in col2_correct_answer.split("###") if tmp]
+    check = False
+    for explain, correct_answer in zip(count_explain, count_correct_answer):
+        explain_answer = explain.split("))")
+        if (len(explain_answer) < 2):
+            explain_answer = explain.split("]]")
+        if (len(explain_answer) < 2):
+            explain_answer = explain.split("}}")
+        answers = [element.strip()
+                   for element in correct_answer.split("\n") if element.strip() != ""]
+        explain_answer_completed = common.remove_special_characters(
+            explain_answer[-1])
+        check = common.clean_text(" ".join(answers)) == common.clean_text(
+            explain_answer_completed)
+    return check
 
 
-def check_T4_count_explain(col1_explain, col2_answer):
-    # Pending ???
-    return True
+def check_T4_format_combine_sentences(col1_explain):
+    if (not col1_explain):
+        return False
+    return check_S4_format_combine_sentences(col1_explain)
+
+
+def check_T4_count_explain(col1_explain, col2_correct_answer):
+    if (not col1_explain):
+        return False
+    count_explain = [
+        tmp for tmp in col1_explain.split("###") if tmp]
+    count_correct_answer = [
+        tmp for tmp in col2_correct_answer.split("###") if tmp]
+    return len(count_explain) == len(count_correct_answer)
 
 
 def check_T5_check_mean_vietnamese(explain):
+    if (not explain):
+        return False
     explain_answer = explain.split("))")
     if (len(explain_answer) < 2):
         explain_answer = explain.split("]]")
     if (len(explain_answer) < 2):
         explain_answer = explain.split("}}")
-    return check_E13_written_by_vietnamese(explain_answer[-1].strip().rstrip("."))
+    explain_answer_completed = explain_answer[-1].split("(")
+    return check_E13_written_by_vietnamese(explain_answer_completed[-1].strip().rstrip("."))
 
 
-def check_T6_form_kana(col1_explain, col2_kana_answer, col3_correct_answer):
-    # Pending ???
-    return True
-
-
-def check_T6_form_romanji(col1_explain, col2_romanji_answer, col3_correct_answer):
-    # Pending ???
-    return True
-
-
-def check_T9_explain_like_audio_question(col1_explain, audio_question):
-    explain_jp = re.findall(r'\{\{(.*?)\}\}', col1_explain)
-    if not audio_question and not explain_jp:
-        return True
-    if not explain_jp or not audio_question:
+def check_T6_match_correct_answer(col1_explain, col2_correct_answer):
+    if (not col1_explain):
         return False
-    return explain_jp[0].strip() == audio_question.strip()
+    count_explain = [
+        tmp for tmp in col1_explain.split("###") if tmp]
+    count_correct_answer = [common.remove_special_characters(
+        tmp) for tmp in col2_correct_answer.split("###") if tmp]
+    check = False
+    for explain, correct_answer in zip(count_explain, count_correct_answer):
+        correct_answer_arr = [common.remove_special_characters(element.strip()) for element in correct_answer.split(
+            "\n") if element.strip() != ""]
+        explain_jp = re.findall(r'\{\{(.*?)\}\}', explain)
+        explain_jp_completed = common.remove_special_characters(
+            explain_jp[0]) if len(explain_jp) > 0 else ""
+        check = common.clean_text(explain_jp_completed) == common.clean_text(
+            "".join(correct_answer_arr))
+    return check
 
 
-def check_T10_form_kana_match_correct_answer(col1_explain, col2_correct_answer):
-    kana_jp = re.findall(r'\[\[(.*?)\]\]', col1_explain)
-    correct_answer_text = [element.strip() for element in col2_correct_answer.split(
-        "\n") if element.strip() != ""]
-    return kana_jp[0].strip() == "".join(correct_answer_text).strip()
+def check_T6_form_kana(col1_explain, col2_kana_answer, col3_correct_answer, col4_answer):
+    if (not col1_explain):
+        return False
+    try:
+        count_explain = [
+            tmp for tmp in col1_explain.split("###") if tmp]
+        count_correct_answer = [common.remove_special_characters(
+            tmp) for tmp in col3_correct_answer.split("###") if tmp]
+        check = False
+        for explain, correct_answer in zip(count_explain, count_correct_answer):
+            check = check_T10_form_kana(
+                explain, col2_kana_answer, correct_answer, col4_answer)
+        return check
+    except Exception as e:
+        return False
 
 
-def check_T10_form_romanji_match_kana_answer(col1_explain, col2_kana_answer):
-    romanji_jp = re.findall(r'\(\((.*?)\)\)', col1_explain)
-    kana_answer_text = [element.strip() for element in col2_kana_answer.split(
-        "\n") if element.strip() != ""]
-    return romanji_jp[0].strip() == "".join(kana_answer_text).strip()
+def check_T6_form_romanji(col1_explain, col2_romanji_answer, col3_correct_answer, col4_answer):
+    if (not col1_explain):
+        return False
+    try:
+        count_explain = [
+            tmp for tmp in col1_explain.split("###") if tmp]
+        count_correct_answer = [common.remove_special_characters(
+            tmp) for tmp in col3_correct_answer.split("###") if tmp]
+        check = False
+        for explain, correct_answer in zip(count_explain, count_correct_answer):
+            check = check_T10_form_romanji(
+                explain, col2_romanji_answer, correct_answer, col4_answer)
+        return check
+    except Exception as e:
+
+        return False
 
 
-def check_T15_form_kana_of_audio_question(col1_explain, audio_question):
-    # Pending ???
-    return True
+def check_T9_explain_like_audio(col1_explain, audio):
+    if (not col1_explain):
+        return False
+    explain_jp = re.findall(r'\{\{(.*?)\}\}', col1_explain)
+    if not audio and not explain_jp:
+        return True
+    if not explain_jp or not audio:
+        return False
+    return common.clean_text(explain_jp[0].strip("～").split('[な]')[0]) == common.clean_text(audio.strip("～"))
 
 
-def check_T15_form_romanji_of_audio_question(col1_explain, audio_question):
-    # Pending ???
-    return True
+def check_T10_form_kana(col1_explain, col2_kana_answer, col3_correct_answer, col4_answer):
+    if (not col1_explain):
+        return False
+    try:
+        explain_kana = re.findall(r'\[\[(.*?)\]\]', col1_explain)
+        explain_kana_completed = common.remove_special_characters(
+            explain_kana[0])
+        kana_answer_arr = [ele.strip("\r").strip()
+                           for ele in col2_kana_answer.split("\n") if ele]
+        correct_answer_arr = [
+            common.remove_special_characters(ele.strip("\r").strip()) for ele in col3_correct_answer.split("\n") if ele]
+        answer_arr = [common.remove_special_characters(
+            ele.strip("\r").strip()) for ele in col4_answer.split("\n") if ele]
+        index_kana_correct_answer_arr = [
+            answer_arr.index(item.strip("\r").strip()) for item in correct_answer_arr]
+
+        kana_correct_answer = "".join(
+            [common.remove_special_characters(kana_answer_arr[ele]) for ele in index_kana_correct_answer_arr])
+        return common.clean_text(
+            kana_correct_answer) == common.clean_text(explain_kana_completed)
+    except Exception as e:
+        return False
+
+
+def check_T10_form_romanji(col1_explain, col2_romanji_answer, col3_correct_answer, col4_answer):
+    if (not col1_explain):
+        return False
+    try:
+        explain_romanji = re.findall(r'\(\((.*?)\)\)', col1_explain)
+        explain_romanji_completed = common.remove_special_characters(
+            explain_romanji[0])
+        romanji_answer_arr = [
+            common.clean_text(common.remove_special_characters(ele.strip("\r").strip())) for ele in col2_romanji_answer.split("\n") if ele]
+        correct_answer_arr = [
+            common.remove_special_characters(ele.strip("\r").strip()) for ele in col3_correct_answer.split("\n") if ele]
+        answer_arr = [common.remove_special_characters(
+            ele.strip("\r").strip()) for ele in col4_answer.split("\n") if ele]
+        index_romanji_correct_answer_arr = [
+            answer_arr.index(item.strip("\r").strip()) for item in correct_answer_arr]
+        romanji_correct_answer = " ".join(
+            [romanji_answer_arr[ele] for ele in index_romanji_correct_answer_arr])
+        return romanji_correct_answer.replace(" ", "") == common.clean_text(
+            explain_romanji_completed).replace(" ", "")
+    except Exception as e:
+        return False
+
+
+def check_T13_explain_mean_like_text_question_type_1(col1_explain, col2_text_question):
+    col2_text_question = col2_text_question.replace("\n", " ")
+    if (not col1_explain):
+        return False
+    check_tag_p = bool(
+        re.search(r'<[pP][^>]*>.*?</[pP]>', col2_text_question))
+    col2_text_question_clean = col2_text_question
+    if check_tag_p:
+        col2_text_question_clean = common.get_text_from_html(
+            col2_text_question)
+    text_question_clean = col2_text_question_clean
+    if (len(col2_text_question.split("\"")) > 1):
+        text_question_clean = col2_text_question.split("\"")[1].strip()
+    explain_text_question = col1_explain.split("))")
+    if (len(explain_text_question) < 2):
+        explain_text_question = col1_explain.split("]]")
+    if (len(explain_text_question) < 2):
+        explain_text_question = col1_explain.split("}}")
+    explain_text_question_final = explain_text_question[-1].split("(tính từ đuôi い)")[
+        0]
+    explain_text_question_final = explain_text_question_final.split("(tính từ đuôi な)")[
+        0]
+    text_question_clean = unicodedata.normalize('NFC', text_question_clean)
+    explain_text_question_final = unicodedata.normalize(
+        'NFC', explain_text_question_final)
+    return common.clean_text(text_question_clean) in common.clean_text(explain_text_question_final)
+
+
+def check_T15_form_kana_of_audio(col1_explain, col2_audio):
+    if (not col1_explain):
+        return False
+    try:
+        kana_jp = re.findall(r'\[\[(.*?)\]\]', col1_explain)
+        return common.contains_kana(kana_jp[0])
+    except Exception as e:
+        return False
+
+
+def check_T15_form_romanji_of_audio(col1_explain, col2_audio):
+    if (not col1_explain):
+        return False
+    try:
+        romanji_jp = re.findall(r'\(\((.*?)\)\)', col1_explain)
+        return common.contains_romaji(romanji_jp[0])
+    except Exception as e:
+        return False
 
 
 def check_T17_expression_kanji_of_correct_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+    # Pending
+    if (not col1_explain):
+        return False
+    explain_jp = re.findall(r'\{\{(.*?)\}\}', col1_explain)
+    check_jp = check_E3_written_by_japanese(explain_jp[0])
+    return check_jp
 
 
-def check_T18_complete_sentences_answer_combining_correct_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T18_complete_sentences_answer_combining_correct_answer(col1_explain, col2_correct_answer, col3_text_question, col4_answer):
+    if (not col1_explain):
+        return False
+    try:
+        explain_jp = re.findall(r'\{\{(.*?)\}\}', col1_explain)
+        text_question_clean = common.get_text_from_html(col3_text_question)
+        text_question_clean = text_question_clean.replace("\n", "")
+        separate_text_question = text_question_clean.split("()")
+        if (not separate_text_question):
+            separate_text_question = text_question_clean.split("(）")
+        answer_arr = [common.remove_special_characters(element.strip()) for element in col4_answer.split(
+            "\n") if element.strip() != ""]
+        correct_answer_completed = f'{separate_text_question[0]}{answer_arr[int(col2_correct_answer) - 1]}{separate_text_question[1]}'
+        return common.clean_text(explain_jp[0]) == common.clean_text(correct_answer_completed)
+    except Exception as e:
+        return False
 
 
-def check_T18_complete_sentences_answer_combining_kana_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T18_complete_sentences_answer_combining_kana_answer(col1_explain, col2_correct_answer, col3_kana_question, col4_kana_answer):
+    if (not col1_explain):
+        return False
+    try:
+        kana_explain_jp = re.findall(r'\[\[(.*?)\]\]', col1_explain)
+        kana_question_clean = common.get_text_from_html(col3_kana_question)
+        kana_question_clean = kana_question_clean.replace("\n", "")
+        separate_kana_question = kana_question_clean.split("()")
+        if (not separate_kana_question):
+            separate_kana_question = kana_question_clean.split("(）")
+        kana_answer_arr = [common.remove_special_characters(element.strip()) for element in col4_kana_answer.split(
+            "\n") if element.strip() != ""]
+
+        correct_answer_completed = f'{separate_kana_question[0]}{kana_answer_arr[int(col2_correct_answer) - 1]}{separate_kana_question[1]}'
+        return common.clean_text(kana_explain_jp[0]) == common.clean_text(correct_answer_completed)
+    except Exception as e:
+        return False
 
 
-def check_T18_complete_sentences_answer_combining_romanji_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T18_complete_sentences_answer_combining_romanji_answer(col1_explain, col2_correct_answer, col3_romanji_question, col4_romanji_answer):
+    if (not col1_explain):
+        return False
+    try:
+        romanji_explain_jp = re.findall(r'\(\((.*?)\)\)', col1_explain)
+        romanji_question_clean = common.get_text_from_html_romanji(
+            col3_romanji_question)
+        romanji_question_clean = romanji_question_clean.replace("\n", "")
+        separate_romanji_question = romanji_question_clean.split("()")
+        if (not separate_romanji_question):
+            separate_romanji_question = romanji_question_clean.split("(）")
+        romanji_answer_arr = [common.remove_special_characters(element.strip()) for element in col4_romanji_answer.split(
+            "\n") if element.strip() != ""]
+        correct_answer_completed = f'{separate_romanji_question[0]}{romanji_answer_arr[int(col2_correct_answer) - 1]}{separate_romanji_question[1]}'
+        return common.clean_text(romanji_explain_jp[0]).replace(" ", "") == common.clean_text(correct_answer_completed).replace(" ", "")
+    except Exception as e:
+        return False
 
 
-def check_T19_complete_sentences_text_combining_correct_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T19_complete_sentences_text_combining_correct_answer(col1_explain, col2_correct_answer, col3_text_question, col4_answer):
+    if (not col1_explain):
+        return False
+    try:
+        matches_correct_answer = re.findall(r'\((.*?)\)', col2_correct_answer)
+        matches_answer = re.findall(r'\((.*?)\)', col4_answer)
+        if (not matches_answer):
+            matches_answer = re.findall(r'\((.*?)\）', col4_answer)
+
+        matches_correct_answer_final = []
+        for i, item in enumerate(matches_correct_answer):
+            if item != "":
+                matches_correct_answer_final.append(matches_answer.pop(0))
+            else:
+                matches_correct_answer_final.append("")
+
+        matches_correct_answer_final.append("")
+        text_question_clean = common.get_text_from_html(col3_text_question)
+        text_question_clean = text_question_clean.replace("\n", "")
+        text_explain_jp = re.findall(r'\{\{(.*?)\}\}', col1_explain)
+        separate_text_question = text_question_clean.split("()")
+        if (not separate_text_question):
+            separate_text_question = text_question_clean.split("(）")
+        correct_answer_completed = ""
+        for tmp1, tmp2 in zip(separate_text_question, matches_correct_answer_final):
+            correct_answer_completed += f'{tmp1}{tmp2}'
+        return common.clean_text(correct_answer_completed) == common.clean_text(text_explain_jp[0])
+    except Exception as e:
+        return False
 
 
-def check_T19_complete_sentences_text_combining_kana_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T19_complete_sentences_text_combining_kana_answer(col1_explain, col2_correct_answer, col3_kana_question, col4_kana_answer):
+    if (not col1_explain):
+        return False
+    try:
+        matches_correct_answer = re.findall(r'\((.*?)\)', col2_correct_answer)
+        matches_answer = re.findall(r'\((.*?)\)', col4_kana_answer)
+        if (not matches_answer):
+            matches_answer = re.findall(r'\((.*?)\）', col4_kana_answer)
+
+        matches_correct_answer_final = []
+        for i, item in enumerate(matches_correct_answer):
+            if item != "":
+                matches_correct_answer_final.append(matches_answer.pop(0))
+            else:
+                matches_correct_answer_final.append("")
+
+        matches_correct_answer_final.append("")
+        kana_question_clean = common.get_text_from_html(col3_kana_question)
+        kana_question_clean = kana_question_clean.replace("\n", "")
+        kana_explain_jp = re.findall(r'\[\[(.*?)\]\]', col1_explain)
+        separate_kana_question = kana_question_clean.split("()")
+        if (not separate_kana_question):
+            separate_kana_question = kana_question_clean.split("(）")
+        correct_answer_completed = ""
+        for tmp1, tmp2 in zip(separate_kana_question, matches_correct_answer_final):
+            correct_answer_completed += f'{tmp1}{tmp2}'
+        return common.clean_text(correct_answer_completed) == common.clean_text(kana_explain_jp[0])
+    except Exception as e:
+        return False
 
 
-def check_T19_complete_sentences_text_combining_romanji_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T19_complete_sentences_text_combining_romanji_answer(col1_explain, col2_correct_answer, col3_romanji_question, col4_romanji_answer):
+    if (not col1_explain):
+        return False
+    try:
+        matches_correct_answer = re.findall(r'\((.*?)\)', col2_correct_answer)
+        matches_answer = re.findall(r'\((.*?)\)', col4_romanji_answer)
+        if (not matches_answer):
+            matches_answer = re.findall(r'\((.*?)\）', col4_romanji_answer)
+
+        matches_correct_answer_final = []
+        for i, item in enumerate(matches_correct_answer):
+            if item != "":
+                matches_correct_answer_final.append(
+                    f' {matches_answer.pop(0)}')
+            else:
+                matches_correct_answer_final.append("")
+        matches_correct_answer_final.append("")
+        romanji_question_clean = common.get_text_from_html_romanji(
+            col3_romanji_question)
+        romanji_question_clean = romanji_question_clean.replace("\n", "")
+        romanji_explain_jp = re.findall(r'\(\((.*?)\)\)', col1_explain)
+        separate_romanji_question = romanji_question_clean.split("()")
+        if (not separate_romanji_question):
+            separate_romanji_question = romanji_question_clean.split("(）")
+        separate_romanji_question = [common.remove_special_characters(tmp.rstrip())
+                                     for tmp in separate_romanji_question]
+        correct_answer_completed = ""
+        for tmp1, tmp2 in zip(separate_romanji_question, matches_correct_answer_final):
+            correct_answer_completed += f'{tmp1}{tmp2}'
+        return common.clean_text(correct_answer_completed).replace(" ", "") == common.clean_text(common.remove_special_characters(romanji_explain_jp[0])).replace(" ", "")
+    except Exception as e:
+        return False
 
 
-def check_T21_complete_sentences_drop_text_combining_correct_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T21_complete_sentences_drop_text_combining_correct_answer(col1_explain, col2_correct_answer, col3_answer):
+    if (not col1_explain):
+        return False
+    try:
+        text_explain_jp = re.findall(r'\{\{(.*?)\}\}', col1_explain)
+        correct_answer = [tmp.strip("\r").strip() for index, tmp in enumerate(
+            col3_answer.split("\n")) if index != int(col2_correct_answer) - 1 and tmp != ""]
+        correct_answer_completed = "".join(correct_answer)
+        return common.clean_text(common.remove_special_characters(text_explain_jp[0])) == common.clean_text(correct_answer_completed)
+    except Exception as e:
+        return False
 
 
-def check_T21_complete_sentences_drop_text_combining_kana_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T21_complete_sentences_drop_text_combining_kana_answer(col1_explain, col2_correct_answer, col3_kana_answer):
+    if (not col1_explain):
+        return False
+    try:
+        kana_explain_jp = re.findall(r'\[\[(.*?)\]\]', col1_explain)
+        correct_answer = [tmp.strip("\r").strip() for index, tmp in enumerate(
+            col3_kana_answer.split("\n")) if index != int(col2_correct_answer) - 1 and tmp != ""]
+        correct_answer_completed = "".join(correct_answer)
+        return common.clean_text(common.remove_special_characters(kana_explain_jp[0])) == common.clean_text(correct_answer_completed)
+    except Exception as e:
+        return False
 
 
-def check_T21_complete_sentences_drop_text_combining_romanji_answer(col1_explain, col2_correct_answer):
-    # Pending ???
-    return True
+def check_T21_complete_sentences_drop_text_combining_romanji_answer(col1_explain, col2_correct_answer, col3_romanji_answer):
+    if (not col1_explain):
+        return False
+    try:
+        romanji_explain_jp = re.findall(r'\(\((.*?)\)\)', col1_explain)
+        correct_answer = [tmp.strip("\r").strip() for index, tmp in enumerate(
+            col3_romanji_answer.split("\n")) if index != int(col2_correct_answer) - 1 and tmp != ""]
+        correct_answer_completed = " ".join(correct_answer)
+        return common.clean_text(common.remove_special_characters(romanji_explain_jp[0])).replace(" ", "") == common.clean_text(correct_answer_completed).replace(" ", "")
+    except Exception as e:
+        return False
+
+
+def check_T22_explain_mean_like_text_question_type_1(col1_explain, col2_text_question):
+    if (not col1_explain):
+        return False
+    count_explain = [
+        tmp for tmp in col1_explain.split("###") if tmp]
+    check_tag_p = bool(
+        re.search(r'<[pP][^>]*>.*?</[pP]>', col2_text_question))
+    col2_text_question_clean = col2_text_question
+    if check_tag_p:
+        col2_text_question_clean = common.get_text_from_html(
+            col2_text_question)
+    text_question_clean = col2_text_question_clean
+    text_question_clean = text_question_clean.replace("\n", "")
+
+    if (len(col2_text_question.split("\"")) > 1):
+        text_question_clean = col2_text_question.split("\"")[1].strip()
+    check = False
+    for explain in count_explain:
+        explain_text_question = explain.split("))")
+        if (len(explain_text_question) < 2):
+            explain_text_question = explain.split("]]")
+        if (len(explain_text_question) < 2):
+            explain_text_question = explain.split("}}")
+
+        check = common.clean_text(text_question_clean) in common.clean_text(
+            explain_text_question[-1])
+    return check
+
 
 # Column explain_grammar
 
@@ -394,10 +951,36 @@ def check_V3_explain_grammar(col1_explain_grammar, col2_text_question):
     check_tag_p = bool(re.search(r'<[pP][^>]*>.*?</[pP]>', col2_text_question))
     if check_tag_p and not col1_explain_grammar:
         return False
-    return check_tag_p
+    return True
 
 
 def check_V3_number_explain_grammar(col1_explain_grammar, col2_text_question):
-    # Pending
-    condition_explain_number = True
-    return condition_explain_number
+    count_tag_p = col2_text_question.count("<p>")
+    if (not col1_explain_grammar and not bool(count_tag_p)):
+        return True
+    count_explain_grammar = col1_explain_grammar.split("###")
+    return count_tag_p == len(count_explain_grammar)
+
+def check_increasing_sequences(arr):
+    increasing_sequences = []
+    current_sequence = [arr[0]]
+
+    for i in range(1, len(arr)):
+        if arr[i] == arr[i - 1] + 1:
+            current_sequence.append(arr[i])
+        else:
+            increasing_sequences.append(current_sequence)
+            current_sequence = [arr[i]]
+
+    increasing_sequences.append(current_sequence)
+
+    return increasing_sequences
+
+def is_increasing_and_complete(subarray):
+    expected_sequence = set(range(1, len(subarray) + 1))
+    return len(subarray) == len(expected_sequence) and set(subarray).issubset(expected_sequence)
+
+
+def check_arrays(arrays):
+    data = check_increasing_sequences(arrays)
+    return all(is_increasing_and_complete(subarray) for subarray in data)

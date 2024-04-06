@@ -1,0 +1,14 @@
+[
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "unit": "偉大 [な]、重要 [な]、貴重 [な]\n～ほど～はない／いない (so sánh)",
+        "count_questions": 17,
+        "content": "- explain: Khớp với đáp án ở cột answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer\n- explain: Giống với text question (bỏ <p></p> nếu có)\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "unit": "Ôn tập",
+        "count_questions": 3,
+        "content": "- explain: Khớp với đáp án ở cột answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer\n- explain: Giống với text question (bỏ <p></p> nếu có)\n"
+    }
+]

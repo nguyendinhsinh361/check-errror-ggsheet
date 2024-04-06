@@ -1,0 +1,68 @@
+[
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 4,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và ghép từ thành câu",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 5,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 8,
+        "content": "- answer: Viết bằng tiếng Việt\n- correct_answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 17,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 18,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 21,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 24,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+        "unit": "ダイエット、地球、苦手 [な]、話しかける\n～というのは...ということだ\n～というのは～のことだ",
+        "count_questions": 27,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc từ (câu) và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 7,
+        "content": "- mean_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "Ôn tập",
+        "count_questions": 8,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "Ôn tập",
+        "count_questions": 9,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    }
+]

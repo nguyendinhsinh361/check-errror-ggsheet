@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import re
 import json
 import pandas as pd
+import os
 
 
 def is_japanese(word):
@@ -21,12 +22,16 @@ def is_latin(text):
     return bool(latin_character.match(text))
 
 
+def contains_latin_or_numbers(text):
+    latin_or_numbers_pattern = re.compile(r'[a-zA-Z0-9]+')
+    return bool(re.search(latin_or_numbers_pattern, text))
+
+
 def count_han_words(text):
     han_word_count = 0
 
     for char in text:
         if is_han(char):
-            print(char)
             han_word_count += 1
     return han_word_count
 
@@ -36,13 +41,49 @@ def count_pair_of_parentheses(text):
     return len(text_sparate) - 1
 
 
-def get_clean_text(text):
-
+def get_number_tag_p(text):
+    if (not contains_html(text)):
+        return True
     # Parse the HTML
     soup = BeautifulSoup(text, 'html.parser')
 
-    result = ' '.join(soup.find_all(text=True))
+    count_opening_tags = len(soup.find_all('p'))
+    count_closing_tags = text.count('</p>')
+    return count_opening_tags == count_closing_tags
+
+def get_number_tag_p_for_colum_detail(text):
+    if (not contains_html(text)):
+        return 0
+    # Parse the HTML
+    soup = BeautifulSoup(text, 'html.parser')
+
+    count_closing_tags = text.count('</p>')
+    return count_closing_tags
+
+
+def get_text_from_html(text):
+    if (not contains_html(text)):
+        return text
+    # Parse the HTML
+    soup = BeautifulSoup(text, 'html.parser')
+
+    result = ''.join(soup.find_all(text=True))
     return result
+
+
+def get_text_from_html_romanji(text):
+    if (not contains_html(text)):
+        return text
+    # Parse the HTML
+    soup = BeautifulSoup(text, 'html.parser')
+
+    result = ''.join([tmp.strip() for tmp in soup.find_all(
+        text=True) if contains_latin_or_numbers(tmp.strip())])
+    return result
+
+
+def contains_html(text):
+    return bool(re.search(r'<.*?>', text))
 
 
 def is_number(s):
@@ -53,15 +94,28 @@ def is_number(s):
         return False
 
 
+def check_brackets(col1_explain, condition):
+    explain_jp = re.findall(condition, col1_explain)
+    return bool(len(explain_jp))
+
+
 def check_explain_match_type_1(col1, col2, col3, condition):
-    explain_jp = re.findall(condition, col1)
-    if not col2 and not explain_jp:
-        return True
-    if not explain_jp or not col2:
+    try:
+        explain_jp = re.findall(condition, col1)
+        if not col2 and not explain_jp:
+            return True
+        if not explain_jp or not col2:
+            return False
+        answers = [element.strip()
+                   for element in col2.split("\n") if element.strip() != ""]
+        explain_final = explain_jp[0].split("[な]")[
+            0] if "[な]" in explain_jp[0] else explain_jp[0].split("[な")[0]
+        if "[" in explain_final:
+            explain_final = explain_jp[0].split("[na]")[0]
+        return clean_text(answers[int(col3)-1]) == clean_text(explain_final)
+    except Exception as e:
+        print(e)
         return False
-    answers = [element.strip()
-               for element in col2.split("\n") if element.strip() != ""]
-    return answers[int(col3)-1] == explain_jp[0]
 
 
 def check_explain_match_type_2(col1, col2, condition):
@@ -70,7 +124,7 @@ def check_explain_match_type_2(col1, col2, condition):
         return True
     if not explain_jp or not col2:
         return False
-    return explain_jp[0].strip() == col2.strip()
+    return clean_text(remove_special_characters(explain_jp[0]).replace(" ", "")) == clean_text(remove_special_characters(col2).replace(" ", ""))
 
 
 def flatten_recursive(lst):
@@ -98,3 +152,40 @@ def save_data_to_json(data, path):
 def convert_json_to_excel(data, path_excel):
     df = pd.DataFrame(data)
     df.to_excel(path_excel, index=False, engine='openpyxl')
+
+
+def add_sheet_pandas(filename, sheetname, data):
+    if not filename.endswith('.xlsx'):
+        filename += '.xlsx'
+
+    try:
+        if os.path.exists(filename):
+            df = pd.DataFrame(data)
+            with pd.ExcelWriter(filename, engine='openpyxl', mode='a') as writer:
+                df.to_excel(writer, sheet_name=sheetname, index=False)
+        else:
+            df = pd.DataFrame(data)
+            df.to_excel(filename, sheet_name=sheetname, index=False)
+    except Exception as e:
+        print(e)
+
+
+def clean_text(text):
+    result = text.strip().strip(",").rstrip("。").rstrip(".").rstrip("?").rstrip("？").upper()
+    return result.replace(",", "").replace(" ", "")
+
+
+def contains_kana(text):
+    kana_pattern = r'[\u3040-\u309F\u30A0-\u30FFー]+'
+    return bool(re.search(kana_pattern, text))
+
+
+def contains_romaji(text):
+    latin_or_special_pattern = re.compile(
+        r'^[a-zA-Z0-9!@#$%^&*()_+{}\[\]:;"\'<>,.?/\\|\-~`\s\n]+$')
+    return bool(latin_or_special_pattern.match(text))
+
+
+def remove_special_characters(text):
+    result =  re.sub(r'[^\w\s]', '', text)
+    return result.replace(" ", "")

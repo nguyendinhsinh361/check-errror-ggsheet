@@ -1,0 +1,56 @@
+[
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "unit": "お ～<d>ます</d> です (động từ đặc biệt)",
+        "count_questions": 5,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc phiên âm và viết từ theo nét có sẵn (nhiều từ)",
+        "unit": "お ～<d>ます</d> です (động từ đặc biệt)",
+        "count_questions": 8,
+        "content": "- mean_question: Viết bằng tiếng Việt\n- mean_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "お ～<d>ます</d> です (động từ đặc biệt)",
+        "count_questions": 9,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và chọn từ - phiên âm",
+        "unit": "お ～<d>ます</d> です (động từ đặc biệt)",
+        "count_questions": 14,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và chọn nghĩa",
+        "unit": "お ～<d>ます</d> です (động từ đặc biệt)",
+        "count_questions": 18,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "unit": "お ～<d>ます</d> です (động từ đặc biệt)",
+        "count_questions": 20,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 7,
+        "content": "- explain: Nghĩa tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn từ - phiên âm",
+        "unit": "Ôn tập",
+        "count_questions": 6,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và chọn nghĩa",
+        "unit": "Ôn tập",
+        "count_questions": 9,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    }
+]

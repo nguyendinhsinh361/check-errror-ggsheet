@@ -1,0 +1,8 @@
+[
+    {
+        "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+        "unit": "大人、カップル、サラリーマン\n～らしい",
+        "count_questions": 20,
+        "content": "- explain: Câu hoàn chỉnh khi ghép \"text\" ở cột romanji_answer vào câu ở romaji_question theo như correct_answer\n"
+    }
+]

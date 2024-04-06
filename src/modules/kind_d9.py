@@ -9,21 +9,21 @@ class Kind_D9_Service:
     def __init__(self, obj):
         self.obj = obj
 
-    def J9(self, audio_question):
+    def J9(self, audio):
         arr_error = []
-        if not helper.check_E3_written_by_japanese(audio_question):
+        if not helper.check_E3_written_by_japanese(audio):
             arr_error.append(69)
-        if not helper.check_J3_have_tag_p_or_h(audio_question):
+        if helper.check_J3_have_tag_p_or_h(audio):
             arr_error.append(11)
         return arr_error
 
-    def L9(self, answer, audio_question):
+    def L9(self, answer, audio):
         arr_error = []
         if not helper.check_E3_written_by_japanese(answer):
-            arr_error.append(73)
+            arr_error.append(71)
         if not helper.check_L3_has_max_four_answers(answer):
             arr_error.append(14)
-        if not helper.check_L9_audio_question_contains_answers_accept_dots(answer, audio_question):
+        if not helper.check_L9_audio_contains_answers_accept_dots(answer, audio):
             arr_error.append(18)
         return arr_error
 
@@ -39,15 +39,15 @@ class Kind_D9_Service:
             arr_error.append(28)
         return arr_error
 
-    def S9(self, corect_answer):
+    def S9(self, correct_answer, answer, audio):
         arr_error = []
-        if not helper.check_S13_type_number_and_like_number_audio(corect_answer):
+        if not helper.check_S13_type_number_and_like_number_audio(correct_answer, answer, audio):
             arr_error.append(32)
         return arr_error
 
-    def T9(self, explain, audio_question, correct_answer, kana_answer, romanji_answer):
+    def T9(self, explain, audio, correct_answer, kana_answer, romanji_answer):
         arr_error = []
-        if not helper.check_T9_explain_like_audio_question(explain, audio_question):
+        if not helper.check_T9_explain_like_audio(explain, audio):
             arr_error.append(46)
         if not helper.check_T2_explain_match_answer_and_kana_answer_type_1(explain, kana_answer, correct_answer):
             arr_error.append(47)
@@ -55,18 +55,19 @@ class Kind_D9_Service:
             arr_error.append(48)
         if not helper.check_T5_check_mean_vietnamese(explain):
             arr_error.append(76)
-
+        arr_error.append(helper.check_T2_brackets(explain))
         return arr_error
 
     def run(self):
         kind_data = self.obj
         arr_error = [
-            self.J9(kind_data["audio_question"]),
-            self.L9(kind_data["answer"], kind_data["audio_question"]),
+            self.J9(kind_data["audio"]),
+            self.L9(kind_data["answer"], kind_data["audio"]),
             self.M9(kind_data["kana_answer"], kind_data["answer"]),
             self.N9(kind_data["romanji_answer"], kind_data["kana_answer"]),
-            self.S9(kind_data["corect_answer"]),
-            self.T9(kind_data["explain"], kind_data["audio_question"],
-                    kind_data["corect_answer"], kind_data["kana_answer"], kind_data["romanji_answer"]),
+            self.S9(kind_data["correct_answer"],
+                    kind_data["answer"], kind_data["audio"]),
+            self.T9(kind_data["explain"], kind_data["audio"],
+                    kind_data["correct_answer"], kind_data["kana_answer"], kind_data["romanji_answer"]),
         ]
         return common.flatten_recursive(arr_error)

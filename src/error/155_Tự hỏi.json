@@ -1,0 +1,14 @@
+[
+    {
+        "kind": "Đọc nghĩa và ghép từ thành câu",
+        "unit": "クレジットカード、弁護士、犯人\n...のだろうか",
+        "count_questions": 24,
+        "content": "- explain: Giống với text question (bỏ <p></p> nếu có)\n"
+    },
+    {
+        "kind": "Đọc nghĩa và ghép từ thành câu",
+        "unit": "Ôn tập",
+        "count_questions": 10,
+        "content": "- explain: Giống với text question (bỏ <p></p> nếu có)\n"
+    }
+]

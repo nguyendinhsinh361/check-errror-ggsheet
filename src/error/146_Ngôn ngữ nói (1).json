@@ -1,0 +1,26 @@
+[
+    {
+        "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+        "unit": "能力、感想文、大嫌い、急 [な]\n...の・...の？",
+        "count_questions": 24,
+        "content": "- explain: Câu hoàn chỉnh khi ghép \"text\" ở cột answer vào câu ở text_question theo như correct_answer\n"
+    },
+    {
+        "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+        "unit": "目が覚める、道具、取り付ける\n～ちゃう・～とく・～てる",
+        "count_questions": 22,
+        "content": "- explain: Câu hoàn chỉnh khi ghép \"text\" ở cột answer vào câu ở text_question theo như correct_answer\n"
+    },
+    {
+        "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+        "unit": "Ôn tập",
+        "count_questions": 1,
+        "content": "- explain: Câu hoàn chỉnh khi ghép \"text\" ở cột answer vào câu ở text_question theo như correct_answer\n"
+    },
+    {
+        "kind": "Đọc từ - phiên âm và chọn chỗ trống phù hợp",
+        "unit": "Ôn tập",
+        "count_questions": 9,
+        "content": "- explain: Câu hoàn chỉnh khi ghép \"text\" ở cột answer vào câu ở text_question theo như correct_answer\n"
+    }
+]
