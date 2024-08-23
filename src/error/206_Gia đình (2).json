@@ -1,0 +1,50 @@
+[
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "unit": "祖父、祖母、祖父母、兄弟、姉妹、孫、姪、甥",
+        "count_questions": 7,
+        "content": "- answer: Viết bằng tiếng Việt\n- correct_answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc nghĩa và ghép từ thành câu",
+        "unit": "祖父、祖母、祖父母、兄弟、姉妹、孫、姪、甥",
+        "count_questions": 19,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+        "unit": "祖父、祖母、祖父母、兄弟、姉妹、孫、姪、甥",
+        "count_questions": 22,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu trả lời và ghép câu hỏi",
+        "unit": "伯父、伯母、叔父、叔母、大伯父、大伯母、大叔父、大叔母、いとこ同士、つまり\n～という／ってことだ",
+        "count_questions": 11,
+        "content": "- mean_question: Viết bằng tiếng Việt\n- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
+        "unit": "伯父、伯母、叔父、叔母、大伯父、大伯母、大叔父、大叔母、いとこ同士、つまり\n～という／ってことだ",
+        "count_questions": 13,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và ghép từ thành câu",
+        "unit": "伯父、伯母、叔父、叔母、大伯父、大伯母、大叔父、大叔母、いとこ同士、つまり\n～という／ってことだ",
+        "count_questions": 16,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 5,
+        "content": "- explain: Hình thức romaji của audio\n"
+    },
+    {
+        "kind": "Đọc câu và bỏ từ hoặc cụm từ thừa",
+        "unit": "Ôn tập",
+        "count_questions": 9,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    }
+]

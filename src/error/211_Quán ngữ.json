@@ -1,0 +1,104 @@
+[
+    {
+        "kind": "All",
+        "unit": "All",
+        "count_questions": "All",
+        "content": "- Count questions: Số thứ tự phải nhảy cách\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "口が軽い、耳が早い、腹が黒い\nとは",
+        "count_questions": 1,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "unit": "口が軽い、耳が早い、腹が黒い\nとは",
+        "count_questions": 2,
+        "content": "- answer: Viết bằng tiếng Việt\n- correct_answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "口が軽い、耳が早い、腹が黒い\nとは",
+        "count_questions": 4,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "口が軽い、耳が早い、腹が黒い\nとは",
+        "count_questions": 8,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "口が軽い、耳が早い、腹が黒い\nとは",
+        "count_questions": 12,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
+        "unit": "口が軽い、耳が早い、腹が黒い\nとは",
+        "count_questions": 23,
+        "content": "- mean_question: Viết bằng tiếng Việt\n- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và chọn nghĩa",
+        "unit": "略、一体\n～って／～というのは",
+        "count_questions": 1,
+        "content": "- answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu và ghép nghĩa",
+        "unit": "略、一体\n～って／～というのは",
+        "count_questions": 4,
+        "content": "- answer: Viết bằng tiếng Việt\n- correct_answer: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc nghĩa và ghép từ thành câu",
+        "unit": "略、一体\n～って／～というのは",
+        "count_questions": 12,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
+        "unit": "略、一体\n～って／～というのは",
+        "count_questions": 16,
+        "content": "- mean_question: Viết bằng tiếng Việt\n- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc từ (câu) và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 1,
+        "content": "- mean_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc từ (câu) và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 2,
+        "content": "- mean_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc từ (câu) và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 4,
+        "content": "- mean_question: Viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
+        "unit": "Ôn tập",
+        "count_questions": 4,
+        "content": "- mean_question: Viết bằng tiếng Việt\n- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc câu hỏi và chọn câu trả lời",
+        "unit": "Ôn tập",
+        "count_questions": 8,
+        "content": "- mean_question: Viết bằng tiếng Việt\n- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc nghĩa và ghép từ thành câu",
+        "unit": "Ôn tập",
+        "count_questions": 10,
+        "content": "- text_question: Viết bằng tiếng Việt\n"
+    }
+]

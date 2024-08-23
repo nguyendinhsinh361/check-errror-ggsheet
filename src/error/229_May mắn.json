@@ -1,0 +1,14 @@
+[
+    {
+        "kind": "Đọc nghĩa và ghép từ thành câu",
+        "unit": "もう少しで、あと少しで、危うく\nところだった",
+        "count_questions": 22,
+        "content": "- explain: Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\n"
+    },
+    {
+        "kind": "Đọc nghĩa và ghép từ thành câu",
+        "unit": "Ôn tập",
+        "count_questions": 10,
+        "content": "- explain: Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\n"
+    }
+]

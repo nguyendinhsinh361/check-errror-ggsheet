@@ -7,7 +7,7 @@ import re
 
 def main():
     etl.etl_stream()
-    # helper.check_L4_contains_enough_words("{{サラリーマンがマラソン大会によく参加しています。}}[[サラリーマンがマラソンたいかいによくさんかしています。]]((Sarariiman ga marason taikai ni yoku sankashite imasu.)) Nhân viên văn phòng thì thường xuyên tham gia các đại hội marathon.", "()()(に)()", "Sarariiman () ga <p>marason</p> () <p>taikai</p> () yoku sanka()shite imasu." ,"(ni)")
+    # helper.check_T18_complete_sentences_answer_combining_romanji_answer("{{まさか! 彼女は満点で試験に合格しました。}}[[まさか! かのじょはまんてんでしけんにごうかくしました。]]((Masaka! Kanojo wa manten de shiken ni goukaku shimashita.)) Không thể tin được! Cô ấy đã đỗ kỳ thi với điểm tuyệt đối.", "1", "")
 
 
 if __name__ == "__main__":

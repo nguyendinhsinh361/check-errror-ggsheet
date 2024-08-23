@@ -79,6 +79,7 @@ def get_text_from_html_romanji(text):
 
     result = ''.join([tmp.strip() for tmp in soup.find_all(
         text=True) if contains_latin_or_numbers(tmp.strip())])
+    if(text.startswith("()<")): result = f"(){result}"
     return result
 
 

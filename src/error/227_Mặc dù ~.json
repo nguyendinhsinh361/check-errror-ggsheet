@@ -1,0 +1,26 @@
+[
+    {
+        "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
+        "unit": "欠点、美点、欠場、出場、欠 - ",
+        "count_questions": 23,
+        "content": "- kana_question: Khớp với cột text_question\n- kana_question: Sai ở thẻ <p></p>\n- romaji_question: Khớp với cột kana_question\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+        "unit": "裕福、幸福、不幸\nにもかかわらず",
+        "count_questions": 4,
+        "content": "- explain: Khớp với đáp án ở cột answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer\n"
+    },
+    {
+        "kind": "Nghe và ghép từ thành câu",
+        "unit": "裕福、幸福、不幸\nにもかかわらず",
+        "count_questions": 13,
+        "content": "- explain: Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\n"
+    },
+    {
+        "kind": "Nghe - đọc câu trả lời và chọn câu hỏi",
+        "unit": "Ôn tập",
+        "count_questions": 9,
+        "content": "- kana_question: Khớp với cột text_question\n- kana_question: Sai ở thẻ <p></p>\n- romaji_question: Khớp với cột kana_question\n"
+    }
+]

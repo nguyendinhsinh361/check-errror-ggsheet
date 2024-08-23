@@ -11,7 +11,8 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets",
 CREDS = Credentials.from_service_account_file(
     'src/configs/google_sheet_api.json', scopes=SCOPES)
 
-GGSHEET_TITLE = 'HeyJapan_Dữ liệu tiếng Việt_N3'
+# GGSHEET_TITLE = 'HeyJapan_Dữ liệu tiếng Việt_N3'
+GGSHEET_TITLE = 'HeyJapan_Dữ liệu tiếng Việt_Trung cấp'
 DATA = 'src/data'
 
 
@@ -24,18 +25,12 @@ def extract_data():
     worksheets = sheet.worksheets()
     sheet_names = [sheet.title for
                    sheet in worksheets if common.is_number(sheet.title[0]) and (
-                       sheet.title == "171_Thời hạn" or 
-                       sheet.title == "172_Ngoại hình" or 
-                       sheet.title == "173_Tùy vào ~" or 
-                       sheet.title == "174_Lý do (2)" or 
-                       sheet.title == "177_So sánh (2)" or 
-                       sheet.title == "180_Giả thiết không thực" or 
-                       sheet.title == "183_Văn hóa Nhật Bản" or 
-                       sheet.title == "186_Số lượng nhiều" or 
-                       sheet.title == "189_So sánh (4)" or 
-                       sheet.title == "192_Trạng thái (3)" or 
-                       sheet.title == "195_Bị động gián tiếp" or 
-                       sheet.title == "198_Phán đoán (4)")]
+                       sheet.title == "225_Nguyên nhân (6)" or 
+                       sheet.title == "226_Kinh tế - Chính trị - Xã hội" or 
+                       sheet.title == "227_Mặc dù ~" or 
+                       sheet.title == "228_Cùng với ~" or 
+                       sheet.title == "229_May mắn"
+                )]
     # sheet_names = [sheet.title for
     #                sheet in worksheets if common.is_number(sheet.title[0]) and (sheet.title != "131_Nhờ vả" and sheet.title != "139_Miêu tả (2)" and sheet.title != "140_Xin phép (2)" and sheet.title != "143_Mong muốn (2)" and sheet.title != "145_Truyền đạt thông tin (2)" and sheet.title != "146_Ngôn ngữ nói (1)" and sheet.title != "148_Kết nối (2)")]
     chunk_size = 30

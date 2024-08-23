@@ -1,0 +1,20 @@
+[
+    {
+        "kind": "Nghe và chọn từ - phiên âm",
+        "unit": "利発 [な]、勤勉 [な]、正直 [な]、勇敢 [な]",
+        "count_questions": 7,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe và chọn từ - phiên âm",
+        "unit": "利発 [な]、勤勉 [な]、正直 [な]、勇敢 [な]",
+        "count_questions": 15,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "unit": "人格、才能\nだけじゃなく／だけでなく",
+        "count_questions": 12,
+        "content": "- explain: Khớp với romaji_answer tương ứng theo correct_answer\n"
+    }
+]

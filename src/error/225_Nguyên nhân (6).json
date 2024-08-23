@@ -1,0 +1,32 @@
+[
+    {
+        "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
+        "unit": "自然災害、津波、竜巻、被害\nによる",
+        "count_questions": 2,
+        "content": "- explain: Hình thức kana khớp với correct_answer khi ghép lại thành 1 dòng\n- explain: Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "unit": "自然災害、津波、竜巻、被害\nによる",
+        "count_questions": 3,
+        "content": "- answer: Max 4 đáp án khác nhau\n"
+    },
+    {
+        "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+        "unit": "自然災害、津波、竜巻、被害\nによる",
+        "count_questions": 20,
+        "content": "- text_question: Có chứa 1 ()\n- explain: Câu hoàn chỉnh khi ghép đáp án tương ứng với correct_answer vào vị trí của () ở text_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án ở cột kana_answer tương ứng với correct_answer vào vị trí của () ở kana_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án  ở cột romanji_answer tương ứng với correct_answer vào vị trí của () ở romaji_question, bỏ thẻ p nếu có\n- explain_grammar: Số lượng giải thích tương ứng với số lượng <p></p>\n"
+    },
+    {
+        "kind": "Nghe và nói lại",
+        "unit": "Luyện nói",
+        "count_questions": 6,
+        "content": "- explain: Hình thức romaji của audio\n"
+    },
+    {
+        "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+        "unit": "Ôn tập",
+        "count_questions": 8,
+        "content": "- text_question: Có chứa 1 ()\n- explain: Câu hoàn chỉnh khi ghép đáp án tương ứng với correct_answer vào vị trí của () ở text_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án ở cột kana_answer tương ứng với correct_answer vào vị trí của () ở kana_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án  ở cột romanji_answer tương ứng với correct_answer vào vị trí của () ở romaji_question, bỏ thẻ p nếu có\n- explain_grammar: Số lượng giải thích tương ứng với số lượng <p></p>\n"
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "kind": "Nghe và chọn từ - phiên âm",
+        "unit": "少子化、影響、可能性、深刻 [な]\nと見られる",
+        "count_questions": 11,
+        "content": "- explain: Nghĩa viết bằng tiếng Việt\n"
+    },
+    {
+        "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+        "unit": "少子化、影響、可能性、深刻 [な]\nと見られる",
+        "count_questions": 19,
+        "content": "- text_question: Có chứa 1 ()\n- explain: Câu hoàn chỉnh khi ghép đáp án tương ứng với correct_answer vào vị trí của () ở text_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án ở cột kana_answer tương ứng với correct_answer vào vị trí của () ở kana_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án  ở cột romanji_answer tương ứng với correct_answer vào vị trí của () ở romaji_question, bỏ thẻ p nếu có\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và chọn câu",
+        "unit": "政府、消費税、推進する、回復する\nとしている",
+        "count_questions": 3,
+        "content": "- explain: Khớp với kana_answer tương ứng theo correct_answer\n- explain: Khớp với romaji_answer tương ứng theo correct_answer\n"
+    },
+    {
+        "kind": "Đọc nghĩa và chọn ảnh - từ - phiên âm",
+        "unit": "政府、消費税、推進する、回復する\nとしている",
+        "count_questions": 4,
+        "content": "- answer: 2 hoặc 4 đáp án khác nhau\n- kana_answer: Khớp với cột answer\n- explain: Khớp với đáp án ở cột answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột kana_answer mà tương ứng theo correct answer\n- explain: Khớp với đáp án ở cột romanji_answer mà tương ứng theo correct answer\n"
+    },
+    {
+        "kind": "Nghe - đọc nghĩa và ghép từ thành câu",
+        "unit": "政府、消費税、推進する、回復する\nとしている",
+        "count_questions": 11,
+        "content": "- explain: Hình thức romaji khớp với correct_answer khi ghép lại thành 1 dòng\n"
+    },
+    {
+        "kind": "Chọn hình phù hợp với đoạn ghi âm",
+        "unit": "政府、消費税、推進する、回復する\nとしている",
+        "count_questions": 22,
+        "content": "- explain: Giống với audio\n"
+    },
+    {
+        "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+        "unit": "政府、消費税、推進する、回復する\nとしている",
+        "count_questions": 23,
+        "content": "- explain: Câu hoàn chỉnh khi ghép đáp án  ở cột romanji_answer tương ứng với correct_answer vào vị trí của () ở romaji_question, bỏ thẻ p nếu có\n"
+    },
+    {
+        "kind": "Chọn hình phù hợp với đoạn ghi âm",
+        "unit": "Ôn tập",
+        "count_questions": 2,
+        "content": "- explain: Giống với audio\n"
+    },
+    {
+        "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+        "unit": "Ôn tập",
+        "count_questions": 9,
+        "content": "- text_question: Có chứa 1 ()\n- explain: Câu hoàn chỉnh khi ghép đáp án tương ứng với correct_answer vào vị trí của () ở text_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án ở cột kana_answer tương ứng với correct_answer vào vị trí của () ở kana_question, bỏ thẻ p nếu có\n- explain: Câu hoàn chỉnh khi ghép đáp án  ở cột romanji_answer tương ứng với correct_answer vào vị trí của () ở romaji_question, bỏ thẻ p nếu có\n"
+    },
+    {
+        "kind": "Đọc câu - phiên âm và chọn từ điền vào chỗ trống",
+        "unit": "Ôn tập",
+        "count_questions": 10,
+        "content": "- explain: Câu hoàn chỉnh khi ghép đáp án  ở cột romanji_answer tương ứng với correct_answer vào vị trí của () ở romaji_question, bỏ thẻ p nếu có\n"
+    }
+]
