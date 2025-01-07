@@ -12,7 +12,7 @@ CREDS = Credentials.from_service_account_file(
     'src/configs/google_sheet_api.json', scopes=SCOPES)
 
 # GGSHEET_TITLE = 'HeyJapan_Dữ liệu tiếng Việt_N3'
-GGSHEET_TITLE = 'HeyJapan_Dữ liệu tiếng Việt_Trung cấp'
+GGSHEET_TITLE = 'HeyJapan_Bài học theo sự kiện'
 DATA = 'src/data'
 
 
@@ -23,17 +23,18 @@ def extract_data():
     # Open a specific Google Sheet by title
     sheet = client.open(GGSHEET_TITLE)
     worksheets = sheet.worksheets()
-    sheet_names = [sheet.title for
-                   sheet in worksheets if common.is_number(sheet.title[0]) and (
-                       sheet.title == "225_Nguyên nhân (6)" or 
-                       sheet.title == "226_Kinh tế - Chính trị - Xã hội" or 
-                       sheet.title == "227_Mặc dù ~" or 
-                       sheet.title == "228_Cùng với ~" or 
-                       sheet.title == "229_May mắn"
-                )]
     # sheet_names = [sheet.title for
-    #                sheet in worksheets if common.is_number(sheet.title[0]) and (sheet.title != "131_Nhờ vả" and sheet.title != "139_Miêu tả (2)" and sheet.title != "140_Xin phép (2)" and sheet.title != "143_Mong muốn (2)" and sheet.title != "145_Truyền đạt thông tin (2)" and sheet.title != "146_Ngôn ngữ nói (1)" and sheet.title != "148_Kết nối (2)")]
+    #                sheet in worksheets if common.is_number(sheet.title[0]) and (
+    #                    sheet.title == "Black friday_2" or 
+    #                    sheet.title == "Black friday_1"
+    #             )]
+    sheet_names = [sheet.title for
+                   sheet in worksheets if (
+                       sheet.title == "Black friday_2" or 
+                       sheet.title == "Black friday_1"
+                )]
     chunk_size = 30
+    print(sheet_names)
     seperate_sheets = [sheet_names[i:i+chunk_size]
                        for i in range(0, len(sheet_names), chunk_size)]
     for seperate_sheet in seperate_sheets:
